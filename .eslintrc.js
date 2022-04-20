@@ -39,5 +39,14 @@ module.exports = {
         alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+      },
+    ],
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-default-export': 'error',
   },
 };
