@@ -22,7 +22,7 @@ const AppRoutes = () => (
 );
 
 export const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={import.meta.env.BASE_URL}>
     <AppThemeProvider>
       <ApiClientProvider>
         <AppRoutes />

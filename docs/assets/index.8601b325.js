@@ -28424,5 +28424,6 @@ const O1 = (t) => re`
         gt(pl, { path: Dr.apiKeyInputPage, element: gt(yx, {}) }),
       ],
     }),
-  D1 = () => gt(Qv, { children: gt(b1, { children: gt(Fy, { children: gt(R1, {}) }) }) });
+  D1 = () =>
+    gt(Qv, { basename: '/yumemi-frontend/', children: gt(b1, { children: gt(Fy, { children: gt(R1, {}) }) }) });
 wa.createRoot(document.getElementById('root')).render(gt(Ot.StrictMode, { children: gt(D1, {}) }));
