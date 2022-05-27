@@ -48,6 +48,12 @@ const MyLoadingOverlay = styled(LoadingOverlay)(
   `,
 );
 
+const GraphWrapper = styled.div`
+  // to make the graph responsible in the grid
+  // https://github.com/highcharts/highcharts/issues/9491#issuecomment-1047591279
+  min-width: 0;
+`;
+
 export const PopulationGraph = ({ isLoading, prefecturePopulations }: Props) => {
   const showSpinner = useSpinDelay(isLoading);
   const theme = useTheme();
@@ -70,8 +76,10 @@ export const PopulationGraph = ({ isLoading, prefecturePopulations }: Props) => 
   }, [prefecturePopulations, colors, markerSymbols, minYear, maxYear]);
 
   return (
-    <MyLoadingOverlay active={showSpinner} spinner={<MyLoading />} classNamePrefix="MyLoader_">
-      <HighchartsReact highcharts={Highcharts} options={{ ...options, series }} />
-    </MyLoadingOverlay>
+    <GraphWrapper>
+      <MyLoadingOverlay active={showSpinner} spinner={<MyLoading />} classNamePrefix="MyLoader_">
+        <HighchartsReact highcharts={Highcharts} options={{ ...options, series }} />
+      </MyLoadingOverlay>
+    </GraphWrapper>
   );
 };
