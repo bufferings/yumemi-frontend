@@ -11310,7 +11310,7 @@ var Sc = function (e) {
     return S.sheet.hydrate(a), S;
   },
   Lf = { exports: {} },
-  bt = {};
+  Rt = {};
 /** @license React v16.13.1
  * react-is.production.min.js
  *
@@ -11370,57 +11370,57 @@ function Le(t) {
 function bf(t) {
   return Le(t) === zs;
 }
-bt.AsyncMode = bu;
-bt.ConcurrentMode = zs;
-bt.ContextConsumer = Fs;
-bt.ContextProvider = js;
-bt.Element = Au;
-bt.ForwardRef = Bs;
-bt.Fragment = Is;
-bt.Lazy = Us;
-bt.Memo = Hs;
-bt.Portal = Lu;
-bt.Profiler = _s;
-bt.StrictMode = Ns;
-bt.Suspense = Ws;
-bt.isAsyncMode = function (t) {
+Rt.AsyncMode = bu;
+Rt.ConcurrentMode = zs;
+Rt.ContextConsumer = Fs;
+Rt.ContextProvider = js;
+Rt.Element = Au;
+Rt.ForwardRef = Bs;
+Rt.Fragment = Is;
+Rt.Lazy = Us;
+Rt.Memo = Hs;
+Rt.Portal = Lu;
+Rt.Profiler = _s;
+Rt.StrictMode = Ns;
+Rt.Suspense = Ws;
+Rt.isAsyncMode = function (t) {
   return bf(t) || Le(t) === bu;
 };
-bt.isConcurrentMode = bf;
-bt.isContextConsumer = function (t) {
+Rt.isConcurrentMode = bf;
+Rt.isContextConsumer = function (t) {
   return Le(t) === Fs;
 };
-bt.isContextProvider = function (t) {
+Rt.isContextProvider = function (t) {
   return Le(t) === js;
 };
-bt.isElement = function (t) {
+Rt.isElement = function (t) {
   return typeof t == 'object' && t !== null && t.$$typeof === Au;
 };
-bt.isForwardRef = function (t) {
+Rt.isForwardRef = function (t) {
   return Le(t) === Bs;
 };
-bt.isFragment = function (t) {
+Rt.isFragment = function (t) {
   return Le(t) === Is;
 };
-bt.isLazy = function (t) {
+Rt.isLazy = function (t) {
   return Le(t) === Us;
 };
-bt.isMemo = function (t) {
+Rt.isMemo = function (t) {
   return Le(t) === Hs;
 };
-bt.isPortal = function (t) {
+Rt.isPortal = function (t) {
   return Le(t) === Lu;
 };
-bt.isProfiler = function (t) {
+Rt.isProfiler = function (t) {
   return Le(t) === _s;
 };
-bt.isStrictMode = function (t) {
+Rt.isStrictMode = function (t) {
   return Le(t) === Ns;
 };
-bt.isSuspense = function (t) {
+Rt.isSuspense = function (t) {
   return Le(t) === Ws;
 };
-bt.isValidElementType = function (t) {
+Rt.isValidElementType = function (t) {
   return (
     typeof t == 'string' ||
     typeof t == 'function' ||
@@ -11443,8 +11443,8 @@ bt.isValidElementType = function (t) {
         t.$$typeof === m0))
   );
 };
-bt.typeOf = Le;
-Lf.exports = bt;
+Rt.typeOf = Le;
+Lf.exports = Rt;
 var Ru = Lf.exports,
   x0 = {
     childContextTypes: !0,
@@ -12177,9 +12177,9 @@ var K0 = function (e) {
     'text',
     'tspan',
   ],
-  Rt = Z0.bind();
+  bt = Z0.bind();
 J0.forEach(function (t) {
-  Rt[t] = Rt(t);
+  bt[t] = bt(t);
 });
 var Ff = { color: void 0, size: void 0, className: void 0, style: void 0, attr: void 0 },
   Rc = Ot.createContext && Ot.createContext(Ff),
@@ -12343,7 +12343,7 @@ const sx = () => {
       }, [t, e]);
     return dt.exports.useMemo(() => ({ isInitialized: i, initialize: n, reset: r }), [i, n, r]);
   },
-  ax = Rt.button(
+  ax = bt.button(
     ({ theme: t }) => re`
     cursor: pointer;
     outline: none;
@@ -12378,27 +12378,27 @@ const sx = () => {
     }
   `,
   ),
-  lx = Rt.span`
+  lx = bt.span`
   grid-column-start: 2;
   justify-content: right;
 `,
-  Ic = Rt.span`
+  Ic = bt.span`
   display: grid;
 `,
   Bu = ({ label: t, startIcon: e, endIcon: i, onClick: n = () => {} }) =>
     Kt(ax, { onClick: n, children: [gt(Ic, { children: e }), gt(lx, { children: t }), gt(Ic, { children: i })] });
 Bu.defaultProps = { startIcon: null, endIcon: null, onClick: void 0 };
-const us = Rt.h2(
+const us = bt.h2(
     ({ theme: t }) => re`
     ${t.fonts.displayL}
   `,
   ),
-  ux = Rt.p(
+  ux = bt.p(
     ({ theme: t }) => re`
     ${t.fonts.bodyL}
   `,
   ),
-  hx = Rt.input(
+  hx = bt.input(
     ({ theme: t }) => re`
     background-color: transparent;
     border-radius: 4px;
@@ -12422,17 +12422,17 @@ const us = Rt.h2(
     }
   `,
   ),
-  cx = Rt.header`
+  cx = bt.header`
   display: grid;
   grid-template-columns: 64px auto 64px;
   height: 64px;
   margin-bottom: 24px;
   align-items: center;
 `,
-  dx = Rt.div`
+  dx = bt.div`
   padding: 8px;
 `,
-  px = Rt.button(
+  px = bt.button(
     ({ theme: t }) => re`
     display: block;
 
@@ -12463,7 +12463,7 @@ const us = Rt.h2(
     }
   `,
   ),
-  fx = Rt.h1(
+  fx = bt.h1(
     ({ theme: t }) => re`
     grid-column-start: 2;
     text-align: center;
@@ -12488,7 +12488,7 @@ const us = Rt.h2(
   };
 Wu.defaultProps = { onBack: void 0 };
 const Dr = { mainPage: '/', apiKeyInputPage: '/apikey' },
-  mx = Rt.form`
+  mx = bt.form`
   display: grid;
   grid-row-gap: 24px;
 
@@ -12501,11 +12501,11 @@ const Dr = { mainPage: '/', apiKeyInputPage: '/apikey' },
     min-width: 350px;
   }
 `,
-  gx = Rt.div`
+  gx = bt.div`
   display: grid;
   grid-row-gap: 12px;
 `,
-  vx = Rt.div`
+  vx = bt.div`
   justify-self: end;
 `,
   yx = () => {
@@ -12617,19 +12617,19 @@ const kx = ({ renderErrorFallback: t, suspenseFallback: e, children: i }) => {
     const { reset: n } = gf();
     return gt(wx, { onReset: n, fallbackRender: t, children: gt(dt.exports.Suspense, { fallback: e, children: i }) });
   },
-  Cx = Rt.a`
+  Cx = bt.a`
   justify-self: center;
 `,
-  Ex = Rt.p`
+  Ex = bt.p`
   display: grid;
   grid-row-gap: 12px;
 `,
-  Px = Rt.div(
+  Px = bt.div(
     ({ theme: t }) => re`
     ${t.fonts.bodyL}
   `,
   ),
-  Ox = Rt.div`
+  Ox = bt.div`
   display: grid;
   grid-row-gap: 24px;
 
@@ -28095,13 +28095,13 @@ const Vf = 1980,
     minYear: Vf,
     maxYear: Yf,
   }),
-  r1 = Rt.div`
+  r1 = bt.div`
   display: grid;
   justify-items: center;
   align-content: center;
   grid-row-gap: 15px;
 `,
-  o1 = Rt.div(
+  o1 = bt.div(
     ({ theme: t }) => re`
     color: ${t.colors.onSurfaceVariant};
   `,
@@ -28110,7 +28110,7 @@ const Vf = 1980,
     const t = zn();
     return Kt(r1, { children: [gt(Gf, { color: t.colors.primary }), gt(o1, { children: 'Loading...' })] });
   },
-  a1 = Rt(Ux)(
+  a1 = bt(Ux)(
     ({ theme: t }) => re`
     .MyLoader_overlay {
       background: rgba(200, 200, 200, 0.5);
@@ -28120,7 +28120,12 @@ const Vf = 1980,
     }
   `,
   ),
-  l1 = ({ isLoading: t, prefecturePopulations: e }) => {
+  l1 = bt.div`
+  // to make the graph responsible in the grid
+  // https://github.com/highcharts/highcharts/issues/9491#issuecomment-1047591279
+  min-width: 0;
+`,
+  u1 = ({ isLoading: t, prefecturePopulations: e }) => {
     const i = El.exports.useSpinDelay(t),
       n = zn(),
       { options: r, colors: o, markerSymbols: s, minYear: a, maxYear: f } = n1(n),
@@ -28139,14 +28144,16 @@ const Vf = 1980,
               })),
         [e, o, s, a, f],
       );
-    return gt(a1, {
-      active: i,
-      spinner: gt(s1, {}),
-      classNamePrefix: 'MyLoader_',
-      children: gt(Ax, { highcharts: Tx, options: Wn(Bn({}, r), { series: R }) }),
+    return gt(l1, {
+      children: gt(a1, {
+        active: i,
+        spinner: gt(s1, {}),
+        classNamePrefix: 'MyLoader_',
+        children: gt(Ax, { highcharts: Tx, options: Wn(Bn({}, r), { series: R }) }),
+      }),
     });
   },
-  u1 = Rt.label(
+  h1 = bt.label(
     ({ selected: t, theme: e }) => re`
     grid-template-columns: 24px auto;
     display: grid;
@@ -28164,21 +28171,21 @@ const Vf = 1980,
     }
   `,
   ),
-  h1 = Rt.div`
+  c1 = bt.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 1px;
 `,
-  c1 = Rt.span(
+  d1 = bt.span(
     ({ theme: t }) => re`
     ${t.fonts.bodyL};
   `,
   ),
-  d1 = ({ prefectureSelections: t, onToggleSelection: e }) =>
-    gt(h1, {
+  p1 = ({ prefectureSelections: t, onToggleSelection: e }) =>
+    gt(c1, {
       children: t.map((i) =>
         Kt(
-          u1,
+          h1,
           {
             htmlFor: `checkbox_${i.prefCode}`,
             selected: i.selected,
@@ -28189,14 +28196,14 @@ const Vf = 1980,
                 checked: i.selected,
                 onChange: () => e(i.prefCode),
               }),
-              gt(c1, { children: i.prefName }),
+              gt(d1, { children: i.prefName }),
             ],
           },
           i.prefCode,
         ),
       ),
     }),
-  p1 = Rt.div`
+  f1 = bt.div`
   position: absolute;
   left: 0;
   top: 0;
@@ -28208,21 +28215,21 @@ const Vf = 1980,
   align-content: center;
   grid-row-gap: 15px;
 `,
-  f1 = Rt.div(
+  m1 = bt.div(
     ({ theme: t }) => re`
     color: ${t.colors.onSurfaceVariant};
   `,
   ),
-  m1 = () => {
+  g1 = () => {
     const t = zn();
-    return Kt(p1, { children: [gt(Gf, { color: t.colors.primary }), gt(f1, { children: 'Loading...' })] });
+    return Kt(f1, { children: [gt(Gf, { color: t.colors.primary }), gt(m1, { children: 'Loading...' })] });
   },
   Qf = () => {
     const t = dt.exports.useContext(Pu);
     if (!t) throw new Error('No ResasClient set, useResasClientInitializer to set one');
     return t;
   },
-  g1 = (t) => {
+  v1 = (t) => {
     const e = Qf();
     return Ay(
       t.map((i) => ({
@@ -28232,18 +28239,18 @@ const Vf = 1980,
       })),
     );
   },
-  v1 = (t) => {
-    const e = g1(t.filter((r) => r.selected)),
+  y1 = (t) => {
+    const e = v1(t.filter((r) => r.selected)),
       i = dt.exports.useMemo(() => e.some((r) => r.isLoading), [e]),
       n = dt.exports.useMemo(() => e.flatMap((r) => r.data || []), [e]);
     return dt.exports.useMemo(() => ({ isLoading: i, prefecturePopulations: n }), [i, n]);
   },
-  y1 = () => {
+  x1 = () => {
     const t = Qf();
     return Ty('prefectures', () => t.fetchPrefectures(), { suspense: !0 }).data;
   },
-  x1 = () => {
-    const t = y1(),
+  S1 = () => {
+    const t = x1(),
       [e, i] = dt.exports.useState([]);
     dt.exports.useEffect(() => {
       const r = t.map((o) => Wn(Bn({}, o), { selected: !1 }));
@@ -28257,25 +28264,25 @@ const Vf = 1980,
     );
     return dt.exports.useMemo(() => ({ prefectureSelections: e, togglePrefectureSelection: n }), [e, n]);
   },
-  S1 = Rt.div`
+  w1 = bt.div`
   padding: 0 24px;
   display: grid;
   grid-row-gap: 24px;
 `,
-  w1 = () => {
-    const { prefectureSelections: t, togglePrefectureSelection: e } = x1(),
-      { isLoading: i, prefecturePopulations: n } = v1(t);
-    return Kt(S1, {
+  k1 = () => {
+    const { prefectureSelections: t, togglePrefectureSelection: e } = S1(),
+      { isLoading: i, prefecturePopulations: n } = y1(t);
+    return Kt(w1, {
       children: [
         gt(us, { children: '\u90FD\u9053\u5E9C\u770C' }),
-        gt(d1, { prefectureSelections: t, onToggleSelection: e }),
+        gt(p1, { prefectureSelections: t, onToggleSelection: e }),
         gt(us, { children: '\u7DCF\u4EBA\u53E3\u63A8\u79FB\u30B0\u30E9\u30D5' }),
-        gt(l1, { isLoading: i, prefecturePopulations: n }),
+        gt(u1, { isLoading: i, prefecturePopulations: n }),
       ],
     });
   },
-  k1 = ({ resetErrorBoundary: t }) => gt(Mx, { onReset: t }),
-  C1 = () => {
+  C1 = ({ resetErrorBoundary: t }) => gt(Mx, { onReset: t }),
+  E1 = () => {
     const t = zu(),
       e = ku(),
       i = dt.exports.useCallback(() => {
@@ -28284,15 +28291,15 @@ const Vf = 1980,
     return Kt(xf, {
       children: [
         gt(Wu, { title: '\u90FD\u9053\u5E9C\u770C\u5225\u7DCF\u4EBA\u53E3\u63A8\u79FB\u30B0\u30E9\u30D5', onBack: i }),
-        gt(kx, { renderErrorFallback: k1, suspenseFallback: gt(m1, {}), children: gt(w1, {}) }),
+        gt(kx, { renderErrorFallback: C1, suspenseFallback: gt(g1, {}), children: gt(k1, {}) }),
       ],
     });
   };
 var qf = {},
-  E1 = rm(G0);
+  P1 = rm(G0);
 (function (t) {
   Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
-  var e = E1;
+  var e = P1;
   function i() {
     var s = n([
       `
@@ -28353,9 +28360,9 @@ table {
     o = r;
   t.default = o;
 })(qf);
-var P1 = Gc(qf);
-const O1 = (t) => re`
-  ${P1}
+var O1 = Gc(qf);
+const M1 = (t) => re`
+  ${O1}
 
   *,
   *::after,
@@ -28387,11 +28394,11 @@ const O1 = (t) => re`
     appearance: none;
   }
 `,
-  M1 = () => {
+  T1 = () => {
     const t = zn();
-    return gt(jf, { styles: O1(t) });
+    return gt(jf, { styles: M1(t) });
   },
-  T1 = {
+  A1 = {
     onBackground: '#1f1f1f',
     surface0: '#ffffff',
     surface1: '#f6f8fc',
@@ -28408,22 +28415,22 @@ const O1 = (t) => re`
     neutral100: '#e3e3e3',
     neutral200: '#c7c7c7',
   },
-  A1 = {
+  L1 = {
     fontFamily: '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
     titleM: { fontSize: `${16 / 16}rem`, lineHeight: `${24 / 16}rem`, fontWeight: '600' },
     displayL: { fontSize: `${32 / 16}rem`, lineHeight: `${40 / 16}rem`, fontWeight: '500' },
     bodyL: { fontSize: `${16 / 16}rem`, lineHeight: `${24 / 16}rem`, fontWeight: '400' },
     bodyS: { fontSize: `${16 / 16}rem`, lineHeight: `${24 / 16}rem`, fontWeight: '400' },
   },
-  L1 = { colors: T1, fonts: A1 },
-  b1 = ({ children: t }) => Kt(Nf, { theme: L1, children: [gt(M1, {}), t] }),
-  R1 = () =>
+  b1 = { colors: A1, fonts: L1 },
+  R1 = ({ children: t }) => Kt(Nf, { theme: b1, children: [gt(T1, {}), t] }),
+  D1 = () =>
     Kt(Yv, {
       children: [
-        gt(pl, { path: Dr.mainPage, element: gt(xx, { children: gt(C1, {}) }) }),
+        gt(pl, { path: Dr.mainPage, element: gt(xx, { children: gt(E1, {}) }) }),
         gt(pl, { path: Dr.apiKeyInputPage, element: gt(yx, {}) }),
       ],
     }),
-  D1 = () =>
-    gt(Qv, { basename: '/yumemi-frontend/', children: gt(b1, { children: gt(Fy, { children: gt(R1, {}) }) }) });
-wa.createRoot(document.getElementById('root')).render(gt(Ot.StrictMode, { children: gt(D1, {}) }));
+  I1 = () =>
+    gt(Qv, { basename: '/yumemi-frontend/', children: gt(R1, { children: gt(Fy, { children: gt(D1, {}) }) }) });
+wa.createRoot(document.getElementById('root')).render(gt(Ot.StrictMode, { children: gt(I1, {}) }));
