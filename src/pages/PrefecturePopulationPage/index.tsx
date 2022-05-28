@@ -18,6 +18,10 @@ const PrefecturePopulationWrapper = styled.div`
   padding: 0 24px;
   display: grid;
   grid-row-gap: 24px;
+
+  // to make the graph can shrink
+  // https://github.com/highcharts/highcharts/issues/9491#issuecomment-1047591279
+  grid-template-columns: minmax(0, 1fr);
 `;
 
 const PrefecturePopulation = () => {
