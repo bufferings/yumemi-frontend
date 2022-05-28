@@ -11310,7 +11310,7 @@ var Sc = function (e) {
     return S.sheet.hydrate(a), S;
   },
   Lf = { exports: {} },
-  Rt = {};
+  bt = {};
 /** @license React v16.13.1
  * react-is.production.min.js
  *
@@ -11370,57 +11370,57 @@ function Le(t) {
 function bf(t) {
   return Le(t) === zs;
 }
-Rt.AsyncMode = bu;
-Rt.ConcurrentMode = zs;
-Rt.ContextConsumer = Fs;
-Rt.ContextProvider = js;
-Rt.Element = Au;
-Rt.ForwardRef = Bs;
-Rt.Fragment = Is;
-Rt.Lazy = Us;
-Rt.Memo = Hs;
-Rt.Portal = Lu;
-Rt.Profiler = _s;
-Rt.StrictMode = Ns;
-Rt.Suspense = Ws;
-Rt.isAsyncMode = function (t) {
+bt.AsyncMode = bu;
+bt.ConcurrentMode = zs;
+bt.ContextConsumer = Fs;
+bt.ContextProvider = js;
+bt.Element = Au;
+bt.ForwardRef = Bs;
+bt.Fragment = Is;
+bt.Lazy = Us;
+bt.Memo = Hs;
+bt.Portal = Lu;
+bt.Profiler = _s;
+bt.StrictMode = Ns;
+bt.Suspense = Ws;
+bt.isAsyncMode = function (t) {
   return bf(t) || Le(t) === bu;
 };
-Rt.isConcurrentMode = bf;
-Rt.isContextConsumer = function (t) {
+bt.isConcurrentMode = bf;
+bt.isContextConsumer = function (t) {
   return Le(t) === Fs;
 };
-Rt.isContextProvider = function (t) {
+bt.isContextProvider = function (t) {
   return Le(t) === js;
 };
-Rt.isElement = function (t) {
+bt.isElement = function (t) {
   return typeof t == 'object' && t !== null && t.$$typeof === Au;
 };
-Rt.isForwardRef = function (t) {
+bt.isForwardRef = function (t) {
   return Le(t) === Bs;
 };
-Rt.isFragment = function (t) {
+bt.isFragment = function (t) {
   return Le(t) === Is;
 };
-Rt.isLazy = function (t) {
+bt.isLazy = function (t) {
   return Le(t) === Us;
 };
-Rt.isMemo = function (t) {
+bt.isMemo = function (t) {
   return Le(t) === Hs;
 };
-Rt.isPortal = function (t) {
+bt.isPortal = function (t) {
   return Le(t) === Lu;
 };
-Rt.isProfiler = function (t) {
+bt.isProfiler = function (t) {
   return Le(t) === _s;
 };
-Rt.isStrictMode = function (t) {
+bt.isStrictMode = function (t) {
   return Le(t) === Ns;
 };
-Rt.isSuspense = function (t) {
+bt.isSuspense = function (t) {
   return Le(t) === Ws;
 };
-Rt.isValidElementType = function (t) {
+bt.isValidElementType = function (t) {
   return (
     typeof t == 'string' ||
     typeof t == 'function' ||
@@ -11443,8 +11443,8 @@ Rt.isValidElementType = function (t) {
         t.$$typeof === m0))
   );
 };
-Rt.typeOf = Le;
-Lf.exports = Rt;
+bt.typeOf = Le;
+Lf.exports = bt;
 var Ru = Lf.exports,
   x0 = {
     childContextTypes: !0,
@@ -12177,9 +12177,9 @@ var K0 = function (e) {
     'text',
     'tspan',
   ],
-  bt = Z0.bind();
+  Rt = Z0.bind();
 J0.forEach(function (t) {
-  bt[t] = bt(t);
+  Rt[t] = Rt(t);
 });
 var Ff = { color: void 0, size: void 0, className: void 0, style: void 0, attr: void 0 },
   Rc = Ot.createContext && Ot.createContext(Ff),
@@ -12343,7 +12343,7 @@ const sx = () => {
       }, [t, e]);
     return dt.exports.useMemo(() => ({ isInitialized: i, initialize: n, reset: r }), [i, n, r]);
   },
-  ax = bt.button(
+  ax = Rt.button(
     ({ theme: t }) => re`
     cursor: pointer;
     outline: none;
@@ -12378,27 +12378,27 @@ const sx = () => {
     }
   `,
   ),
-  lx = bt.span`
+  lx = Rt.span`
   grid-column-start: 2;
   justify-content: right;
 `,
-  Ic = bt.span`
+  Ic = Rt.span`
   display: grid;
 `,
   Bu = ({ label: t, startIcon: e, endIcon: i, onClick: n = () => {} }) =>
     Kt(ax, { onClick: n, children: [gt(Ic, { children: e }), gt(lx, { children: t }), gt(Ic, { children: i })] });
 Bu.defaultProps = { startIcon: null, endIcon: null, onClick: void 0 };
-const us = bt.h2(
+const us = Rt.h2(
     ({ theme: t }) => re`
     ${t.fonts.displayL}
   `,
   ),
-  ux = bt.p(
+  ux = Rt.p(
     ({ theme: t }) => re`
     ${t.fonts.bodyL}
   `,
   ),
-  hx = bt.input(
+  hx = Rt.input(
     ({ theme: t }) => re`
     background-color: transparent;
     border-radius: 4px;
@@ -12422,17 +12422,17 @@ const us = bt.h2(
     }
   `,
   ),
-  cx = bt.header`
+  cx = Rt.header`
   display: grid;
   grid-template-columns: 64px auto 64px;
   height: 64px;
   margin-bottom: 24px;
   align-items: center;
 `,
-  dx = bt.div`
+  dx = Rt.div`
   padding: 8px;
 `,
-  px = bt.button(
+  px = Rt.button(
     ({ theme: t }) => re`
     display: block;
 
@@ -12463,7 +12463,7 @@ const us = bt.h2(
     }
   `,
   ),
-  fx = bt.h1(
+  fx = Rt.h1(
     ({ theme: t }) => re`
     grid-column-start: 2;
     text-align: center;
@@ -12488,7 +12488,7 @@ const us = bt.h2(
   };
 Wu.defaultProps = { onBack: void 0 };
 const Dr = { mainPage: '/', apiKeyInputPage: '/apikey' },
-  mx = bt.form`
+  mx = Rt.form`
   display: grid;
   grid-row-gap: 24px;
 
@@ -12501,11 +12501,11 @@ const Dr = { mainPage: '/', apiKeyInputPage: '/apikey' },
     min-width: 350px;
   }
 `,
-  gx = bt.div`
+  gx = Rt.div`
   display: grid;
   grid-row-gap: 12px;
 `,
-  vx = bt.div`
+  vx = Rt.div`
   justify-self: end;
 `,
   yx = () => {
@@ -12617,19 +12617,19 @@ const kx = ({ renderErrorFallback: t, suspenseFallback: e, children: i }) => {
     const { reset: n } = gf();
     return gt(wx, { onReset: n, fallbackRender: t, children: gt(dt.exports.Suspense, { fallback: e, children: i }) });
   },
-  Cx = bt.a`
+  Cx = Rt.a`
   justify-self: center;
 `,
-  Ex = bt.p`
+  Ex = Rt.p`
   display: grid;
   grid-row-gap: 12px;
 `,
-  Px = bt.div(
+  Px = Rt.div(
     ({ theme: t }) => re`
     ${t.fonts.bodyL}
   `,
   ),
-  Ox = bt.div`
+  Ox = Rt.div`
   display: grid;
   grid-row-gap: 24px;
 
@@ -28095,13 +28095,13 @@ const Vf = 1980,
     minYear: Vf,
     maxYear: Yf,
   }),
-  r1 = bt.div`
+  r1 = Rt.div`
   display: grid;
   justify-items: center;
   align-content: center;
   grid-row-gap: 15px;
 `,
-  o1 = bt.div(
+  o1 = Rt.div(
     ({ theme: t }) => re`
     color: ${t.colors.onSurfaceVariant};
   `,
@@ -28110,7 +28110,7 @@ const Vf = 1980,
     const t = zn();
     return Kt(r1, { children: [gt(Gf, { color: t.colors.primary }), gt(o1, { children: 'Loading...' })] });
   },
-  a1 = bt(Ux)(
+  a1 = Rt(Ux)(
     ({ theme: t }) => re`
     .MyLoader_overlay {
       background: rgba(200, 200, 200, 0.5);
@@ -28120,12 +28120,7 @@ const Vf = 1980,
     }
   `,
   ),
-  l1 = bt.div`
-  // to make the graph responsible in the grid
-  // https://github.com/highcharts/highcharts/issues/9491#issuecomment-1047591279
-  min-width: 0;
-`,
-  u1 = ({ isLoading: t, prefecturePopulations: e }) => {
+  l1 = ({ isLoading: t, prefecturePopulations: e }) => {
     const i = El.exports.useSpinDelay(t),
       n = zn(),
       { options: r, colors: o, markerSymbols: s, minYear: a, maxYear: f } = n1(n),
@@ -28144,16 +28139,14 @@ const Vf = 1980,
               })),
         [e, o, s, a, f],
       );
-    return gt(l1, {
-      children: gt(a1, {
-        active: i,
-        spinner: gt(s1, {}),
-        classNamePrefix: 'MyLoader_',
-        children: gt(Ax, { highcharts: Tx, options: Wn(Bn({}, r), { series: R }) }),
-      }),
+    return gt(a1, {
+      active: i,
+      spinner: gt(s1, {}),
+      classNamePrefix: 'MyLoader_',
+      children: gt(Ax, { highcharts: Tx, options: Wn(Bn({}, r), { series: R }) }),
     });
   },
-  h1 = bt.label(
+  u1 = Rt.label(
     ({ selected: t, theme: e }) => re`
     grid-template-columns: 24px auto;
     display: grid;
@@ -28171,21 +28164,21 @@ const Vf = 1980,
     }
   `,
   ),
-  c1 = bt.div`
+  h1 = Rt.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 1px;
 `,
-  d1 = bt.span(
+  c1 = Rt.span(
     ({ theme: t }) => re`
     ${t.fonts.bodyL};
   `,
   ),
-  p1 = ({ prefectureSelections: t, onToggleSelection: e }) =>
-    gt(c1, {
+  d1 = ({ prefectureSelections: t, onToggleSelection: e }) =>
+    gt(h1, {
       children: t.map((i) =>
         Kt(
-          h1,
+          u1,
           {
             htmlFor: `checkbox_${i.prefCode}`,
             selected: i.selected,
@@ -28196,14 +28189,14 @@ const Vf = 1980,
                 checked: i.selected,
                 onChange: () => e(i.prefCode),
               }),
-              gt(d1, { children: i.prefName }),
+              gt(c1, { children: i.prefName }),
             ],
           },
           i.prefCode,
         ),
       ),
     }),
-  f1 = bt.div`
+  p1 = Rt.div`
   position: absolute;
   left: 0;
   top: 0;
@@ -28215,21 +28208,21 @@ const Vf = 1980,
   align-content: center;
   grid-row-gap: 15px;
 `,
-  m1 = bt.div(
+  f1 = Rt.div(
     ({ theme: t }) => re`
     color: ${t.colors.onSurfaceVariant};
   `,
   ),
-  g1 = () => {
+  m1 = () => {
     const t = zn();
-    return Kt(f1, { children: [gt(Gf, { color: t.colors.primary }), gt(m1, { children: 'Loading...' })] });
+    return Kt(p1, { children: [gt(Gf, { color: t.colors.primary }), gt(f1, { children: 'Loading...' })] });
   },
   Qf = () => {
     const t = dt.exports.useContext(Pu);
     if (!t) throw new Error('No ResasClient set, useResasClientInitializer to set one');
     return t;
   },
-  v1 = (t) => {
+  g1 = (t) => {
     const e = Qf();
     return Ay(
       t.map((i) => ({
@@ -28239,18 +28232,18 @@ const Vf = 1980,
       })),
     );
   },
-  y1 = (t) => {
-    const e = v1(t.filter((r) => r.selected)),
+  v1 = (t) => {
+    const e = g1(t.filter((r) => r.selected)),
       i = dt.exports.useMemo(() => e.some((r) => r.isLoading), [e]),
       n = dt.exports.useMemo(() => e.flatMap((r) => r.data || []), [e]);
     return dt.exports.useMemo(() => ({ isLoading: i, prefecturePopulations: n }), [i, n]);
   },
-  x1 = () => {
+  y1 = () => {
     const t = Qf();
     return Ty('prefectures', () => t.fetchPrefectures(), { suspense: !0 }).data;
   },
-  S1 = () => {
-    const t = x1(),
+  x1 = () => {
+    const t = y1(),
       [e, i] = dt.exports.useState([]);
     dt.exports.useEffect(() => {
       const r = t.map((o) => Wn(Bn({}, o), { selected: !1 }));
@@ -28264,25 +28257,29 @@ const Vf = 1980,
     );
     return dt.exports.useMemo(() => ({ prefectureSelections: e, togglePrefectureSelection: n }), [e, n]);
   },
-  w1 = bt.div`
+  S1 = Rt.div`
   padding: 0 24px;
   display: grid;
   grid-row-gap: 24px;
+
+  // to make the graph can shrink
+  // https://github.com/highcharts/highcharts/issues/9491#issuecomment-1047591279
+  grid-template-columns: minmax(0, 1fr);
 `,
-  k1 = () => {
-    const { prefectureSelections: t, togglePrefectureSelection: e } = S1(),
-      { isLoading: i, prefecturePopulations: n } = y1(t);
-    return Kt(w1, {
+  w1 = () => {
+    const { prefectureSelections: t, togglePrefectureSelection: e } = x1(),
+      { isLoading: i, prefecturePopulations: n } = v1(t);
+    return Kt(S1, {
       children: [
         gt(us, { children: '\u90FD\u9053\u5E9C\u770C' }),
-        gt(p1, { prefectureSelections: t, onToggleSelection: e }),
+        gt(d1, { prefectureSelections: t, onToggleSelection: e }),
         gt(us, { children: '\u7DCF\u4EBA\u53E3\u63A8\u79FB\u30B0\u30E9\u30D5' }),
-        gt(u1, { isLoading: i, prefecturePopulations: n }),
+        gt(l1, { isLoading: i, prefecturePopulations: n }),
       ],
     });
   },
-  C1 = ({ resetErrorBoundary: t }) => gt(Mx, { onReset: t }),
-  E1 = () => {
+  k1 = ({ resetErrorBoundary: t }) => gt(Mx, { onReset: t }),
+  C1 = () => {
     const t = zu(),
       e = ku(),
       i = dt.exports.useCallback(() => {
@@ -28291,15 +28288,15 @@ const Vf = 1980,
     return Kt(xf, {
       children: [
         gt(Wu, { title: '\u90FD\u9053\u5E9C\u770C\u5225\u7DCF\u4EBA\u53E3\u63A8\u79FB\u30B0\u30E9\u30D5', onBack: i }),
-        gt(kx, { renderErrorFallback: C1, suspenseFallback: gt(g1, {}), children: gt(k1, {}) }),
+        gt(kx, { renderErrorFallback: k1, suspenseFallback: gt(m1, {}), children: gt(w1, {}) }),
       ],
     });
   };
 var qf = {},
-  P1 = rm(G0);
+  E1 = rm(G0);
 (function (t) {
   Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
-  var e = P1;
+  var e = E1;
   function i() {
     var s = n([
       `
@@ -28360,9 +28357,9 @@ table {
     o = r;
   t.default = o;
 })(qf);
-var O1 = Gc(qf);
-const M1 = (t) => re`
-  ${O1}
+var P1 = Gc(qf);
+const O1 = (t) => re`
+  ${P1}
 
   *,
   *::after,
@@ -28394,11 +28391,11 @@ const M1 = (t) => re`
     appearance: none;
   }
 `,
-  T1 = () => {
+  M1 = () => {
     const t = zn();
-    return gt(jf, { styles: M1(t) });
+    return gt(jf, { styles: O1(t) });
   },
-  A1 = {
+  T1 = {
     onBackground: '#1f1f1f',
     surface0: '#ffffff',
     surface1: '#f6f8fc',
@@ -28415,22 +28412,22 @@ const M1 = (t) => re`
     neutral100: '#e3e3e3',
     neutral200: '#c7c7c7',
   },
-  L1 = {
+  A1 = {
     fontFamily: '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
     titleM: { fontSize: `${16 / 16}rem`, lineHeight: `${24 / 16}rem`, fontWeight: '600' },
     displayL: { fontSize: `${32 / 16}rem`, lineHeight: `${40 / 16}rem`, fontWeight: '500' },
     bodyL: { fontSize: `${16 / 16}rem`, lineHeight: `${24 / 16}rem`, fontWeight: '400' },
     bodyS: { fontSize: `${16 / 16}rem`, lineHeight: `${24 / 16}rem`, fontWeight: '400' },
   },
-  b1 = { colors: A1, fonts: L1 },
-  R1 = ({ children: t }) => Kt(Nf, { theme: b1, children: [gt(T1, {}), t] }),
-  D1 = () =>
+  L1 = { colors: T1, fonts: A1 },
+  b1 = ({ children: t }) => Kt(Nf, { theme: L1, children: [gt(M1, {}), t] }),
+  R1 = () =>
     Kt(Yv, {
       children: [
-        gt(pl, { path: Dr.mainPage, element: gt(xx, { children: gt(E1, {}) }) }),
+        gt(pl, { path: Dr.mainPage, element: gt(xx, { children: gt(C1, {}) }) }),
         gt(pl, { path: Dr.apiKeyInputPage, element: gt(yx, {}) }),
       ],
     }),
-  I1 = () =>
-    gt(Qv, { basename: '/yumemi-frontend/', children: gt(R1, { children: gt(Fy, { children: gt(D1, {}) }) }) });
-wa.createRoot(document.getElementById('root')).render(gt(Ot.StrictMode, { children: gt(I1, {}) }));
+  D1 = () =>
+    gt(Qv, { basename: '/yumemi-frontend/', children: gt(b1, { children: gt(Fy, { children: gt(R1, {}) }) }) });
+wa.createRoot(document.getElementById('root')).render(gt(Ot.StrictMode, { children: gt(D1, {}) }));
