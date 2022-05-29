@@ -11,8 +11,8 @@
     "format": "prettier --write **/*.{js,ts,tsx,css}",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
+    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [

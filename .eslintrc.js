@@ -9,8 +9,18 @@ module.exports = {
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:storybook/recommended',
     'prettier',
+  ],
+  overrides: [
+    {
+      files: '*.stories.@(ts|tsx|js)',
+      extends: 'plugin:storybook/recommended',
+      rules: {
+        'import/no-default-export': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'react/jsx-props-no-spreading': 'off',
+      },
+    },
   ],
   ignorePatterns: ['dist'],
   parser: '@typescript-eslint/parser',
