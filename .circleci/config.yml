@@ -1,0 +1,11 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+
+workflows:
+  deploy-chromatic:
+    jobs:
+      - node/run:
+          version: '18.2.0'
+          npm-run: chromatic
