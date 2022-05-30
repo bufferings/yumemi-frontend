@@ -10,28 +10,72 @@ import { TextField } from 'src/components/TextField';
 import { TopAppBar } from 'src/components/TopAppBar';
 import { route } from 'src/pages/routes';
 
-const StyledForm = styled.form`
-  display: grid;
-  grid-row-gap: 24px;
+const Layout = styled.div`
+  > {
+    :first-child {
+      margin-bottom: 24px;
+    }
+  }
 
-  margin: 0 auto 0 auto;
-  padding: 0 24px;
-  max-width: 500px;
+  form {
+    margin: 0 auto 0 auto;
+    padding: 0 24px;
+    max-width: 500px;
 
-  @media (max-width: 40em) {
-    width: 100%;
-    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+
+    > {
+      :first-child {
+        margin-bottom: 12px;
+      }
+
+      :nth-child(2) {
+        margin-bottom: 24px;
+      }
+
+      :nth-child(3) {
+        margin-bottom: 24px;
+      }
+
+      :nth-child(4) {
+        display: flex;
+        justify-content: end;
+      }
+    }
+
+    @media (max-width: 40em) {
+      width: 100%;
+      min-width: 350px;
+    }
   }
 `;
 
-const TextWrapper = styled.div`
-  display: grid;
-  grid-row-gap: 12px;
-`;
+type Props = {
+  resasApiKeyInput: string;
+  setResasApiKeyInput: React.Dispatch<React.SetStateAction<string>>;
+  onSubmit: (event: FormEvent, newResasApiKey: string) => void;
+};
 
-const ButtonWrapper = styled.div`
-  justify-self: end;
-`;
+export const Presentation = ({ resasApiKeyInput, setResasApiKeyInput, onSubmit }: Props) => (
+  <Layout>
+    <TopAppBar title="都道府県別総人口推移グラフ" />
+    <form onSubmit={(event) => onSubmit(event, resasApiKeyInput)}>
+      <Headline>RESAS APIキー</Headline>
+      <Paragraph>API呼び出しに使用するRESAS APIキーを指定します。</Paragraph>
+      <TextField
+        type="password"
+        placeholder="RESAS-APIキー"
+        value={resasApiKeyInput}
+        required
+        onChange={(e) => setResasApiKeyInput(e.target.value)}
+      />
+      <div>
+        <Button label="利用開始" endIcon={<MdArrowForward />} />
+      </div>
+    </form>
+  </Layout>
+);
 
 export const ApiKeyInputPage = () => {
   const [resasApiKeyInput, setResasApiKeyInput] = useState('');
@@ -48,24 +92,10 @@ export const ApiKeyInputPage = () => {
   );
 
   return (
-    <>
-      <TopAppBar title="都道府県別総人口推移グラフ" />
-      <StyledForm onSubmit={(event) => handleFormSubmit(event, resasApiKeyInput)}>
-        <TextWrapper>
-          <Headline>RESAS APIキー</Headline>
-          <Paragraph>API呼び出しに使用するRESAS APIキーを指定します。</Paragraph>
-        </TextWrapper>
-        <TextField
-          type="password"
-          placeholder="RESAS-APIキー"
-          value={resasApiKeyInput}
-          required
-          onChange={(e) => setResasApiKeyInput(e.target.value)}
-        />
-        <ButtonWrapper>
-          <Button label="利用開始" endIcon={<MdArrowForward />} />
-        </ButtonWrapper>
-      </StyledForm>
-    </>
+    <Presentation
+      resasApiKeyInput={resasApiKeyInput}
+      setResasApiKeyInput={setResasApiKeyInput}
+      onSubmit={handleFormSubmit}
+    />
   );
 };

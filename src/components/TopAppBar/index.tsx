@@ -7,7 +7,6 @@ const TopAppBarContainer = styled.header`
   display: grid;
   grid-template-columns: 64px auto 64px;
   height: 64px;
-  margin-bottom: 24px;
   align-items: center;
 `;
 

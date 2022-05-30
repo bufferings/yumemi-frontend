@@ -7,4 +7,4 @@ export default {
   component: Headline,
 } as ComponentMeta<typeof Headline>;
 
-export const Basic: ComponentStory<typeof Headline> = () => <Headline>総人口推移グラフ</Headline>;
+export const Default: ComponentStory<typeof Headline> = () => <Headline>総人口推移グラフ</Headline>;

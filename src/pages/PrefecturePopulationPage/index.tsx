@@ -39,6 +39,14 @@ const PrefecturePopulation = () => {
 
 const renderErrorFallback = ({ resetErrorBoundary }: FallbackProps) => <ErrorFallback onReset={resetErrorBoundary} />;
 
+const Layout = styled.div`
+  > {
+    :first-child {
+      margin-bottom: 24px;
+    }
+  }
+`;
+
 export const PrefecturePopulationPage = () => {
   const apiClientInitializer = useApiClientInitializer();
   const navigate = useNavigate();
@@ -49,11 +57,11 @@ export const PrefecturePopulationPage = () => {
   }, [apiClientInitializer, navigate]);
 
   return (
-    <>
+    <Layout>
       <TopAppBar title="都道府県別総人口推移グラフ" onBack={handleResetApiKey} />
       <ApiClientBoundary renderErrorFallback={renderErrorFallback} suspenseFallback={<SuspenseFallback />}>
         <PrefecturePopulation />
       </ApiClientBoundary>
-    </>
+    </Layout>
   );
 };

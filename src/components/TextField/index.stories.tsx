@@ -7,4 +7,6 @@ export default {
   component: TextField,
 } as ComponentMeta<typeof TextField>;
 
-export const Basic: ComponentStory<typeof TextField> = () => <TextField type="password" placeholder="RESAS-APIキー" />;
+export const Default: ComponentStory<typeof TextField> = () => (
+  <TextField type="password" placeholder="RESAS-APIキー" />
+);
