@@ -8,4 +8,5 @@ workflows:
     jobs:
       - node/run:
           version: '18.2.0'
+          override-ci-command: npm ci --legacy-peer-deps
           npm-run: chromatic
