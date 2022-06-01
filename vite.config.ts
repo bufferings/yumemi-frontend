@@ -6,7 +6,4 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   base: '/yumemi-frontend/',
   plugins: [react(), tsconfigPaths()],
-  build: {
-    outDir: 'docs',
-  },
 });
