@@ -26,7 +26,10 @@ jobs:
       - checkout
       - node/install-packages:
           override-ci-command: npm ci --legacy-peer-deps
-      - run: tsc && vite build --outDir docs
+      - run:
+          command: |
+            npm run tsc
+            npm run vite build --outDir docs
       - run:
           command: |
             git config user.email "bufferings+github@gmail.com"
