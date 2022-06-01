@@ -16,11 +16,11 @@
     "chromatic": "npx chromatic --exit-zero-on-changes"
   },
   "lint-staged": {
-    "!(docs/*).{js,ts,tsx}": [
+    "!(docs)/**/*.{js,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "!(docs/*).css": [
+    "!(docs)/**/*.css": [
       "prettier --write"
     ]
   },
