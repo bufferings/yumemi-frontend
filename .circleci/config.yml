@@ -6,7 +6,36 @@ orbs:
 workflows:
   deploy-chromatic:
     jobs:
+      - deploy-ghpages:
+          filters:
+            branches:
+              only:
+                - main
       - node/run:
           version: '18.2.0'
           override-ci-command: npm ci --legacy-peer-deps
           npm-run: chromatic
+
+
+jobs:
+  deploy-ghpages:
+    executor:
+      name: node/default
+      tag: '18.2.0'
+    steps:
+      - checkout
+      - node/install-packages:
+          override-ci-command: npm ci --legacy-peer-deps
+      - run: npm run build
+      - run:
+          command: |
+            git config user.email "bufferings+github@gmail.com"
+            git config user.name "CircleCI (Mitsuyuki Shiiba)"
+      - add_ssh_keys:
+          fingerprints:
+            - "91:ac:ed:60:a2:be:47:cb:27:75:bc:ff:13:b0:6d:4c"
+      - run:
+          command: |
+            git add docs
+            git commit -m "[skip ci] Update GH Pages"
+            git push origin main
