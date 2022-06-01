@@ -40,5 +40,8 @@ jobs:
       - run:
           command: |
             git add docs
-            git commit -m "[skip ci] Update GH Pages"
-            git push origin main
+            if ! git diff --staged --quiet --; then
+              git commit -m "[skip ci] Update GH Pages"
+              git push origin main
+            fi
+
