@@ -28,8 +28,8 @@ jobs:
           override-ci-command: npm ci --legacy-peer-deps
       - run:
           command: |
-            npm run tsc
-            npm run vite build --outDir docs
+            npx tsc
+            npx vite build --outDir docs
       - run:
           command: |
             git config user.email "bufferings+github@gmail.com"
