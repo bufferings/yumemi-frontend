@@ -40,17 +40,21 @@ export const Presentation = ({
   </Wrapper>
 );
 
-export const PrefecturePopulationPage = () => {
+const InBoundary = () => {
   const { prefectureSelections, togglePrefectureSelection } = usePrefectureSelections();
   const { isLoading, prefecturePopulations } = usePrefecturePopulations(prefectureSelections);
   return (
-    <PageLayout>
-      <Presentation
-        prefectureSelections={prefectureSelections}
-        onTogglePrefectureSelection={togglePrefectureSelection}
-        isLoadingPrefecturePopulations={isLoading}
-        prefecturePopulations={prefecturePopulations}
-      />
-    </PageLayout>
+    <Presentation
+      prefectureSelections={prefectureSelections}
+      onTogglePrefectureSelection={togglePrefectureSelection}
+      isLoadingPrefecturePopulations={isLoading}
+      prefecturePopulations={prefecturePopulations}
+    />
   );
 };
+
+export const PrefecturePopulationPage = () => (
+  <PageLayout>
+    <InBoundary />
+  </PageLayout>
+);
