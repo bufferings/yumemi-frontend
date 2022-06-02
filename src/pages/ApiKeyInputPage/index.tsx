@@ -7,16 +7,11 @@ import { Button } from 'src/components/Button';
 import { Headline } from 'src/components/Headline';
 import { Paragraph } from 'src/components/Paragraph';
 import { TextField } from 'src/components/TextField';
-import { TopAppBar } from 'src/components/TopAppBar';
 import { route } from 'src/pages/routes';
 
-const Layout = styled.div`
-  > {
-    :first-child {
-      margin-bottom: 24px;
-    }
-  }
+import { PageLayout } from './PageLayout';
 
+const Wrapper = styled.div`
   form {
     margin: 0 auto 0 auto;
     padding: 0 24px;
@@ -51,15 +46,14 @@ const Layout = styled.div`
   }
 `;
 
-type Props = {
+type PresentationProps = {
   resasApiKeyInput: string;
   setResasApiKeyInput: React.Dispatch<React.SetStateAction<string>>;
   onSubmit: (event: FormEvent, newResasApiKey: string) => void;
 };
 
-export const Presentation = ({ resasApiKeyInput, setResasApiKeyInput, onSubmit }: Props) => (
-  <Layout>
-    <TopAppBar title="都道府県別総人口推移グラフ" />
+export const Presentation = ({ resasApiKeyInput, setResasApiKeyInput, onSubmit }: PresentationProps) => (
+  <Wrapper>
     <form onSubmit={(event) => onSubmit(event, resasApiKeyInput)}>
       <Headline>RESAS APIキー</Headline>
       <Paragraph>API呼び出しに使用するRESAS APIキーを指定します。</Paragraph>
@@ -74,7 +68,7 @@ export const Presentation = ({ resasApiKeyInput, setResasApiKeyInput, onSubmit }
         <Button label="利用開始" endIcon={<MdArrowForward />} />
       </div>
     </form>
-  </Layout>
+  </Wrapper>
 );
 
 export const ApiKeyInputPage = () => {
@@ -92,10 +86,12 @@ export const ApiKeyInputPage = () => {
   );
 
   return (
-    <Presentation
-      resasApiKeyInput={resasApiKeyInput}
-      setResasApiKeyInput={setResasApiKeyInput}
-      onSubmit={handleFormSubmit}
-    />
+    <PageLayout>
+      <Presentation
+        resasApiKeyInput={resasApiKeyInput}
+        setResasApiKeyInput={setResasApiKeyInput}
+        onSubmit={handleFormSubmit}
+      />
+    </PageLayout>
   );
 };

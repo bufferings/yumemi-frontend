@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ApiClientProvider } from 'src/api/ApiClientProvider';
 import { ApiKeyInputPage } from 'src/pages/ApiKeyInputPage';
-import { RequireApiClient } from 'src/pages/App/RequireApiClient';
 import { PrefecturePopulationPage } from 'src/pages/PrefecturePopulationPage';
 import { route } from 'src/pages/routes';
 import { AppThemeProvider } from 'src/themes/AppThemeProvider';
+
+import { RequireApiClient } from './RequireApiClient';
 
 const AppRoutes = () => (
   <Routes>
