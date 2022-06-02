@@ -352,7 +352,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   // to enable the graph to shrink
   // https://github.com/highcharts/highcharts/issues/9491#issuecomment-1047591279
   grid-template-columns: minmax(0, 1fr);
-`,P1=({prefectureSelections:t,onTogglePrefectureSelection:e,isLoadingPrefecturePopulations:i,prefecturePopulations:n})=>Jt(E1,{children:[mt(us,{children:"\u90FD\u9053\u5E9C\u770C"}),mt(x1,{prefectureSelections:t,onToggleSelection:e}),mt(us,{children:"\u7DCF\u4EBA\u53E3\u63A8\u79FB\u30B0\u30E9\u30D5"}),mt(m1,{isLoading:i,prefecturePopulations:n})]}),O1=()=>{const{prefectureSelections:t,togglePrefectureSelection:e}=C1(),{isLoading:i,prefecturePopulations:n}=w1(t);return mt($x,{children:mt(P1,{prefectureSelections:t,onTogglePrefectureSelection:e,isLoadingPrefecturePopulations:i,prefecturePopulations:n})})};var Qf={},M1=nm(X0);(function(t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var e=M1;function i(){var s=n([`
+`,P1=({prefectureSelections:t,onTogglePrefectureSelection:e,isLoadingPrefecturePopulations:i,prefecturePopulations:n})=>Jt(E1,{children:[mt(us,{children:"\u90FD\u9053\u5E9C\u770C"}),mt(x1,{prefectureSelections:t,onToggleSelection:e}),mt(us,{children:"\u7DCF\u4EBA\u53E3\u63A8\u79FB\u30B0\u30E9\u30D5"}),mt(m1,{isLoading:i,prefecturePopulations:n})]}),O1=()=>{const{prefectureSelections:t,togglePrefectureSelection:e}=C1(),{isLoading:i,prefecturePopulations:n}=w1(t);return mt(P1,{prefectureSelections:t,onTogglePrefectureSelection:e,isLoadingPrefecturePopulations:i,prefecturePopulations:n})},M1=()=>mt($x,{children:mt(O1,{})});var Qf={},T1=nm(X0);(function(t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var e=T1;function i(){var s=n([`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -394,8 +394,8 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}`]);return i=function(){return s},s}function n(s,a){return a||(a=s.slice(0)),Object.freeze(Object.defineProperties(s,{raw:{value:Object.freeze(a)}}))}var r=(0,e.css)(i()),o=r;t.default=o})(Qf);var T1=Gc(Qf);const A1=t=>re`
-  ${T1}
+}`]);return i=function(){return s},s}function n(s,a){return a||(a=s.slice(0)),Object.freeze(Object.defineProperties(s,{raw:{value:Object.freeze(a)}}))}var r=(0,e.css)(i()),o=r;t.default=o})(Qf);var A1=Gc(Qf);const L1=t=>re`
+  ${A1}
 
   *,
   *::after,
@@ -426,4 +426,4 @@ table {
     padding: 0;
     appearance: none;
   }
-`,L1=()=>{const t=zn();return mt(_f,{styles:A1(t)})},b1={onBackground:"#1f1f1f",surface0:"#ffffff",surface1:"#f6f8fc",surface2:"#f2f6fc",onSurface:"#1f1f1f",surfaceVariant:"#e1e3e1",onSurfaceVariant:"#444746",primary:"#0b57d0",primary700:"#0842a0",onPrimary:"#ffffff",primaryContainer:"#d3e3fd",onPrimaryContainer:"#041e49",outline:"#747775",neutral100:"#e3e3e3",neutral200:"#c7c7c7"},R1={fontFamily:'"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',titleM:{fontSize:`${16/16}rem`,lineHeight:`${24/16}rem`,fontWeight:"600"},displayL:{fontSize:`${32/16}rem`,lineHeight:`${40/16}rem`,fontWeight:"500"},bodyL:{fontSize:`${16/16}rem`,lineHeight:`${24/16}rem`,fontWeight:"400"},bodyS:{fontSize:`${16/16}rem`,lineHeight:`${24/16}rem`,fontWeight:"400"}},D1={colors:b1,fonts:R1},I1=({children:t})=>Jt(If,{theme:D1,children:[mt(L1,{}),t]}),N1=({children:t})=>{const{isInitialized:e}=zu();return e?t:mt(Xv,{to:Dr.apiKeyInputPage})},_1=()=>Jt(Vv,{children:[mt(dl,{path:Dr.mainPage,element:mt(N1,{children:mt(O1,{})})}),mt(dl,{path:Dr.apiKeyInputPage,element:mt(xx,{})})]}),j1=()=>mt(Yv,{basename:"/yumemi-frontend/",children:mt(I1,{children:mt(jy,{children:mt(_1,{})})})});Sa.createRoot(document.getElementById("root")).render(mt(Ot.StrictMode,{children:mt(j1,{})}));
+`,b1=()=>{const t=zn();return mt(_f,{styles:L1(t)})},R1={onBackground:"#1f1f1f",surface0:"#ffffff",surface1:"#f6f8fc",surface2:"#f2f6fc",onSurface:"#1f1f1f",surfaceVariant:"#e1e3e1",onSurfaceVariant:"#444746",primary:"#0b57d0",primary700:"#0842a0",onPrimary:"#ffffff",primaryContainer:"#d3e3fd",onPrimaryContainer:"#041e49",outline:"#747775",neutral100:"#e3e3e3",neutral200:"#c7c7c7"},D1={fontFamily:'"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',titleM:{fontSize:`${16/16}rem`,lineHeight:`${24/16}rem`,fontWeight:"600"},displayL:{fontSize:`${32/16}rem`,lineHeight:`${40/16}rem`,fontWeight:"500"},bodyL:{fontSize:`${16/16}rem`,lineHeight:`${24/16}rem`,fontWeight:"400"},bodyS:{fontSize:`${16/16}rem`,lineHeight:`${24/16}rem`,fontWeight:"400"}},I1={colors:R1,fonts:D1},N1=({children:t})=>Jt(If,{theme:I1,children:[mt(b1,{}),t]}),_1=({children:t})=>{const{isInitialized:e}=zu();return e?t:mt(Xv,{to:Dr.apiKeyInputPage})},j1=()=>Jt(Vv,{children:[mt(dl,{path:Dr.mainPage,element:mt(_1,{children:mt(M1,{})})}),mt(dl,{path:Dr.apiKeyInputPage,element:mt(xx,{})})]}),F1=()=>mt(Yv,{basename:"/yumemi-frontend/",children:mt(N1,{children:mt(jy,{children:mt(j1,{})})})});Sa.createRoot(document.getElementById("root")).render(mt(Ot.StrictMode,{children:mt(F1,{})}));
