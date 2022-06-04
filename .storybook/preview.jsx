@@ -13,10 +13,10 @@ export const parameters = {
   },
 };
 
-if (import.meta.env.DEV) {
-  const { worker } = await import('src/mocks/browser');
-  await worker.start();
-}
+const { worker } = await import('src/mocks/browser');
+await worker.start({
+  onUnhandledRequest: 'bypass',
+});
 
 const queryClient = new QueryClient({
   defaultOptions: {
