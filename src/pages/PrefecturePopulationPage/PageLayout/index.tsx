@@ -13,10 +13,12 @@ import { SuspenseFallback } from './SuspenseFallback';
 const renderErrorFallback = ({ resetErrorBoundary }: FallbackProps) => <ErrorFallback onReset={resetErrorBoundary} />;
 
 const Wrapper = styled.div`
-  > {
-    :first-child {
-      margin-bottom: 24px;
-    }
+  header:first-of-type {
+    margin-bottom: 24px;
+  }
+
+  p {
+    text-align: center;
   }
 `;
 

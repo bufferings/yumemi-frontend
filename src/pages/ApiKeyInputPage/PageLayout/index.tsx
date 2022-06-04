@@ -3,10 +3,8 @@ import React, { ReactNode } from 'react';
 import { TopAppBar } from 'src/components/TopAppBar';
 
 const Wrapper = styled.div`
-  > {
-    :first-child {
-      margin-bottom: 24px;
-    }
+  header:first-of-type {
+    margin-bottom: 24px;
   }
 `;
 

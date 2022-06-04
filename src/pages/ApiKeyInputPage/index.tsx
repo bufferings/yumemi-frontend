@@ -20,23 +20,21 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    > {
-      :first-child {
-        margin-bottom: 12px;
-      }
+    h2:first-of-type {
+      margin-bottom: 12px;
+    }
 
-      :nth-child(2) {
-        margin-bottom: 24px;
-      }
+    p:first-of-type {
+      margin-bottom: 24px;
+    }
 
-      :nth-child(3) {
-        margin-bottom: 24px;
-      }
+    input:first-of-type {
+      margin-bottom: 24px;
+    }
 
-      :nth-child(4) {
-        display: flex;
-        justify-content: end;
-      }
+    div:first-of-type {
+      display: flex;
+      justify-content: end;
     }
 
     @media (max-width: 40em) {
