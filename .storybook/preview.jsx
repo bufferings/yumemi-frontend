@@ -1,4 +1,7 @@
 import { AppThemeProvider } from 'src/themes/AppThemeProvider';
+import { ResasClient } from '../src/api/resas/ResasClient';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ResasClientContext } from '../src/api/resas/ResasClientProvider';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -10,10 +13,32 @@ export const parameters = {
   },
 };
 
+if (import.meta.env.DEV) {
+  const { worker } = await import('src/mocks/browser');
+  await worker.start();
+}
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchOnWindowFocus: false,
+      cacheTime: Infinity,
+      staleTime: Infinity,
+    },
+  },
+});
+
+const resasClient = new ResasClient('dev');
+
 export const decorators = [
   (Story) => (
     <AppThemeProvider>
-      <Story />
+      <QueryClientProvider client={queryClient}>
+        <ResasClientContext.Provider value={resasClient}>
+          <Story />
+        </ResasClientContext.Provider>
+      </QueryClientProvider>
     </AppThemeProvider>
   ),
 ];
