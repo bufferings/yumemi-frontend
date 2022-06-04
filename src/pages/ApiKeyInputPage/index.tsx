@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { FormEvent, useCallback, useState } from 'react';
 import { MdArrowForward } from 'react-icons/all';
@@ -5,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { useApiClientInitializer } from 'src/api/useApiClientInitializer';
 import { Button } from 'src/components/Button';
 import { Headline } from 'src/components/Headline';
-import { Paragraph } from 'src/components/Paragraph';
 import { TextField } from 'src/components/TextField';
 import { route } from 'src/pages/routes';
 
@@ -44,6 +44,12 @@ const Wrapper = styled.div`
   }
 `;
 
+const Description = styled.p(
+  ({ theme }) => css`
+    ${theme.fonts.bodyL}
+  `,
+);
+
 type PresentationProps = {
   resasApiKeyInput: string;
   setResasApiKeyInput: React.Dispatch<React.SetStateAction<string>>;
@@ -54,10 +60,10 @@ export const Presentation = ({ resasApiKeyInput, setResasApiKeyInput, onSubmit }
   <Wrapper>
     <form onSubmit={(event) => onSubmit(event, resasApiKeyInput)}>
       <Headline>RESAS APIキー</Headline>
-      <Paragraph>
+      <Description>
         API呼び出しに使用するRESAS APIキーを指定します。
         {import.meta.env.DEV && '（開発環境のモックAPIのキーはdev）'}
-      </Paragraph>
+      </Description>
       <TextField
         type="password"
         placeholder="RESAS-APIキー"

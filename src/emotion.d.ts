@@ -37,7 +37,7 @@ interface Fonts {
     lineHeight: string;
     fontWeight: string;
   };
-  displayL: {
+  headlineM: {
     fontSize: string;
     lineHeight: string;
     fontWeight: string;

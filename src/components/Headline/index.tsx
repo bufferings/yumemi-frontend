@@ -3,6 +3,6 @@ import styled from '@emotion/styled';
 
 export const Headline = styled.h2(
   ({ theme }) => css`
-    ${theme.fonts.displayL}
+    ${theme.fonts.headlineM}
   `,
 );

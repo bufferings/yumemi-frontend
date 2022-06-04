@@ -30,9 +30,9 @@ const fonts = {
     lineHeight: `${24 / 16}rem`,
     fontWeight: '600',
   },
-  displayL: {
-    fontSize: `${32 / 16}rem`,
-    lineHeight: `${40 / 16}rem`,
+  headlineM: {
+    fontSize: `${28 / 16}rem`,
+    lineHeight: `${36 / 16}rem`,
     fontWeight: '500',
   },
   bodyL: {
