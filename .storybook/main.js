@@ -15,6 +15,7 @@ module.exports = {
       ...(config.resolve.alias || {}),
       src: path.resolve(__dirname, '../src'),
     };
+    config.build.target = 'esnext';
     return config;
   },
 };
