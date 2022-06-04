@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "dev:without-msw": "VITE_WITHOUT_MSW=true vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .js,.tsx,.tsx",
@@ -30,6 +31,7 @@
     "emotion-reset": "^3.0.1",
     "highcharts": "^10.0.0",
     "highcharts-react-official": "^3.1.0",
+    "msw": "^0.42.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-error-boundary": "^3.1.4",
@@ -72,5 +74,8 @@
     "typescript": "^4.6.3",
     "vite": "^2.9.5",
     "vite-tsconfig-paths": "^3.4.1"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

@@ -56,7 +56,10 @@ export const Presentation = ({ resasApiKeyInput, setResasApiKeyInput, onSubmit }
   <Wrapper>
     <form onSubmit={(event) => onSubmit(event, resasApiKeyInput)}>
       <Headline>RESAS APIキー</Headline>
-      <Paragraph>API呼び出しに使用するRESAS APIキーを指定します。</Paragraph>
+      <Paragraph>
+        API呼び出しに使用するRESAS APIキーを指定します。
+        {import.meta.env.DEV && '（開発環境のモックAPIのキーはdev）'}
+      </Paragraph>
       <TextField
         type="password"
         placeholder="RESAS-APIキー"

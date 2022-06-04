@@ -22,7 +22,7 @@ module.exports = {
       },
     },
   ],
-  ignorePatterns: ['dist'],
+  ignorePatterns: ['dist', 'mockServiceWorker.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
