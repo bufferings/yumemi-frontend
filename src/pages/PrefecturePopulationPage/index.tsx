@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React from 'react';
 import { Headline } from 'src/components/Headline';
@@ -17,6 +18,10 @@ const Wrapper = styled.div`
   // to enable the graph to shrink
   // https://github.com/highcharts/highcharts/issues/9491#issuecomment-1047591279
   grid-template-columns: minmax(0, 1fr);
+
+  p {
+    text-align: right;
+  }
 `;
 
 type PresentationProps = {
@@ -25,6 +30,12 @@ type PresentationProps = {
   isLoadingPrefecturePopulations: boolean;
   prefecturePopulations: PrefecturePopulation[];
 };
+
+const DataSource = styled.p(
+  ({ theme }) => css`
+    ${theme.fonts.bodyS}
+  `,
+);
 
 export const Presentation = ({
   prefectureSelections,
@@ -37,6 +48,7 @@ export const Presentation = ({
     <PrefectureSelector prefectureSelections={prefectureSelections} onToggleSelection={onTogglePrefectureSelection} />
     <Headline>総人口推移グラフ</Headline>
     <PopulationGraph isLoading={isLoadingPrefecturePopulations} prefecturePopulations={prefecturePopulations} />
+    <DataSource>出典：RESAS（地域経済分析システム）</DataSource>
   </Wrapper>
 );
 

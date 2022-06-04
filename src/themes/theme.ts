@@ -41,8 +41,8 @@ const fonts = {
     fontWeight: '400',
   },
   bodyS: {
-    fontSize: `${16 / 16}rem`,
-    lineHeight: `${24 / 16}rem`,
+    fontSize: `${12 / 16}rem`,
+    lineHeight: `${16 / 16}rem`,
     fontWeight: '400',
   },
 };
