@@ -4,6 +4,7 @@ import { FallbackProps } from 'react-error-boundary';
 import { useNavigate } from 'react-router-dom';
 import { ApiClientBoundary } from 'src/api/ApiClientBoundary';
 import { useApiClientInitializer } from 'src/api/useApiClientInitializer';
+import { Paragraph } from 'src/components/Paragraph';
 import { TopAppBar } from 'src/components/TopAppBar';
 import { route } from 'src/pages/routes';
 
@@ -33,6 +34,7 @@ export const Presentation = ({ children, onClickBackButton }: PresentationProps)
     <ApiClientBoundary renderErrorFallback={renderErrorFallback} suspenseFallback={<SuspenseFallback />}>
       {children}
     </ApiClientBoundary>
+    <Paragraph>出典：RESAS（地域経済分析システム）</Paragraph>
   </Wrapper>
 );
 
