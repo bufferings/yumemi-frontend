@@ -2,6 +2,9 @@ import { AppThemeProvider } from 'src/themes/AppThemeProvider';
 import { ResasClient } from '../src/api/resas/ResasClient';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ResasClientContext } from '../src/api/resas/ResasClientProvider';
+import { startMswWorker } from '../src/mocks/browser';
+
+startMswWorker();
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -12,11 +15,6 @@ export const parameters = {
     },
   },
 };
-
-const { worker } = await import('src/mocks/browser');
-await worker.start({
-  onUnhandledRequest: 'bypass',
-});
 
 const queryClient = new QueryClient({
   defaultOptions: {
