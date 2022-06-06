@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { TopAppBar } from 'src/components/TopAppBar';
 
 const Wrapper = styled.div`
-  header:first-of-type {
+  div:first-of-type {
     margin-bottom: 24px;
   }
 `;
@@ -14,8 +14,10 @@ type PresentationProps = {
 
 export const Presentation = ({ children }: PresentationProps) => (
   <Wrapper>
-    <TopAppBar title="都道府県別総人口推移グラフ" />
-    {children}
+    <div>
+      <TopAppBar title="都道府県別総人口推移グラフ" />
+    </div>
+    <div>{children}</div>
   </Wrapper>
 );
 

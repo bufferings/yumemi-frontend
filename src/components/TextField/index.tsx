@@ -12,6 +12,7 @@ export const TextField = styled.input(
     ${theme.fonts.bodyL}
 
     height: 56px;
+    width: 100%;
 
     color: ${theme.colors.onSurface};
     caret-color: ${theme.colors.primary};
