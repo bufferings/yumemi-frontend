@@ -4,7 +4,7 @@ import { handlers } from './handlers';
 
 const worker = setupWorker(...handlers);
 
-export async function startMswWorker() {
+export async function startMockWorker() {
   await worker.start({
     onUnhandledRequest: 'bypass',
   });

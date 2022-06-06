@@ -2,9 +2,9 @@ import { AppThemeProvider } from 'src/themes/AppThemeProvider';
 import { ResasClient } from '../src/api/resas/ResasClient';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ResasClientContext } from '../src/api/resas/ResasClientProvider';
-import { startMswWorker } from '../src/mocks/browser';
+import { startMockWorker } from '../src/mocks/browser';
 
-startMswWorker();
+startMockWorker();
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
