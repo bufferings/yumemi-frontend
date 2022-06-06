@@ -111,6 +111,7 @@ Error generating stack: `+o.message+`
     ${t.fonts.bodyL}
 
     height: 56px;
+    width: 100%;
 
     color: ${t.colors.onSurface};
     caret-color: ${t.colors.primary};
@@ -169,10 +170,10 @@ Error generating stack: `+o.message+`
     overflow: hidden;
     text-overflow: ellipsis;
   `),Wu=({title:t,onBack:e})=>{const i=zn();return Kt(ux,{children:[e&&mt(hx,{children:mt(cx,{onClick:e,children:mt(ix,{color:i.colors.onSurface})})}),mt(dx,{children:t})]})};Wu.defaultProps={onBack:void 0};const px=bt.div`
-  header:first-of-type {
+  div:first-of-type {
     margin-bottom: 24px;
   }
-`,fx=({children:t})=>Kt(px,{children:[mt(Wu,{title:"\u90FD\u9053\u5E9C\u770C\u5225\u7DCF\u4EBA\u53E3\u63A8\u79FB\u30B0\u30E9\u30D5"}),t]}),mx=({children:t})=>mt(fx,{children:t}),gx=bt.div`
+`,fx=({children:t})=>Kt(px,{children:[mt("div",{children:mt(Wu,{title:"\u90FD\u9053\u5E9C\u770C\u5225\u7DCF\u4EBA\u53E3\u63A8\u79FB\u30B0\u30E9\u30D5"})}),mt("div",{children:t})]}),mx=({children:t})=>mt(fx,{children:t}),gx=bt.div`
   form {
     margin: 0 auto 0 auto;
     padding: 0 24px;
@@ -181,19 +182,19 @@ Error generating stack: `+o.message+`
     display: flex;
     flex-direction: column;
 
-    h2:first-of-type {
+    div:first-of-type {
       margin-bottom: 12px;
     }
 
-    p:first-of-type {
+    div:nth-of-type(2) {
       margin-bottom: 24px;
     }
 
-    input:first-of-type {
+    div:nth-of-type(3) {
       margin-bottom: 24px;
     }
 
-    div:first-of-type {
+    div:nth-of-type(4) {
       display: flex;
       justify-content: end;
     }
@@ -205,7 +206,7 @@ Error generating stack: `+o.message+`
   }
 `,vx=bt.p(({theme:t})=>te`
     ${t.fonts.bodyL}
-  `),yx=({resasApiKeyInput:t,setResasApiKeyInput:e,onSubmit:i})=>mt(gx,{children:Kt("form",{onSubmit:n=>i(n,t),children:[mt(us,{children:"RESAS API\u30AD\u30FC"}),Kt(vx,{children:["API\u547C\u3073\u51FA\u3057\u306B\u4F7F\u7528\u3059\u308BRESAS API\u30AD\u30FC\u3092\u6307\u5B9A\u3057\u307E\u3059\u3002",!1]}),mt(lx,{type:"password",placeholder:"RESAS-API\u30AD\u30FC",value:t,required:!0,onChange:n=>e(n.target.value)}),mt("div",{children:mt(Bu,{label:"\u5229\u7528\u958B\u59CB",endIcon:mt(nx,{})})})]})}),xx=()=>{const[t,e]=dt.exports.useState(""),i=zu(),n=wu(),r=dt.exports.useCallback((o,s)=>{o.preventDefault(),i.initialize(s),n(Dr.mainPage)},[i,n]);return mt(mx,{children:mt(yx,{resasApiKeyInput:t,setResasApiKeyInput:e,onSubmit:r})})};var Sx=function(e,i){return e===void 0&&(e=[]),i===void 0&&(i=[]),e.length!==i.length||e.some(function(n,r){return!Object.is(n,i[r])})},Nc={error:null},wx=function(t){pi(e,t);function e(){for(var n,r=arguments.length,o=new Array(r),s=0;s<r;s++)o[s]=arguments[s];return n=t.call.apply(t,[this].concat(o))||this,n.state=Nc,n.resetErrorBoundary=function(){for(var a,f=arguments.length,R=new Array(f),_=0;_<f;_++)R[_]=arguments[_];n.props.onReset==null||(a=n.props).onReset.apply(a,R),n.reset()},n}e.getDerivedStateFromError=function(r){return{error:r}};var i=e.prototype;return i.reset=function(){this.setState(Nc)},i.componentDidCatch=function(r,o){var s,a;(s=(a=this.props).onError)==null||s.call(a,r,o)},i.componentDidUpdate=function(r,o){var s=this.state.error,a=this.props.resetKeys;if(s!==null&&o.error!==null&&Sx(r.resetKeys,a)){var f,R;(f=(R=this.props).onResetKeysChange)==null||f.call(R,r.resetKeys,a),this.reset()}},i.render=function(){var r=this.state.error,o=this.props,s=o.fallbackRender,a=o.FallbackComponent,f=o.fallback;if(r!==null){var R={error:r,resetErrorBoundary:this.resetErrorBoundary};if(dt.exports.isValidElement(f))return f;if(typeof s=="function")return s(R);if(a)return dt.exports.createElement(a,R);throw new Error("react-error-boundary requires either a fallback, fallbackRender, or FallbackComponent prop")}return this.props.children},e}(dt.exports.Component);const kx=({renderErrorFallback:t,suspenseFallback:e,children:i})=>{const{reset:n}=gf();return mt(wx,{onReset:n,fallbackRender:t,children:mt(dt.exports.Suspense,{fallback:e,children:i})})},Cx=bt.a`
+  `),yx=({onApiKeySubmit:t})=>{const[e,i]=dt.exports.useState(""),n=dt.exports.useCallback(r=>{r.preventDefault(),t(e)},[e,t]);return mt(gx,{children:Kt("form",{onSubmit:n,children:[mt("div",{children:mt(us,{children:"RESAS API\u30AD\u30FC"})}),mt("div",{children:Kt(vx,{children:["API\u547C\u3073\u51FA\u3057\u306B\u4F7F\u7528\u3059\u308BRESAS API\u30AD\u30FC\u3092\u6307\u5B9A\u3057\u307E\u3059\u3002",!1]})}),mt("div",{children:mt(lx,{type:"password",placeholder:"RESAS-API\u30AD\u30FC",value:e,required:!0,onChange:r=>i(r.target.value)})}),mt("div",{children:mt(Bu,{label:"\u5229\u7528\u958B\u59CB",endIcon:mt(nx,{})})})]})})},xx=()=>{const t=zu(),e=wu(),i=dt.exports.useCallback(n=>{t.initialize(n),e(Dr.mainPage)},[t,e]);return mt(mx,{children:mt(yx,{onApiKeySubmit:i})})};var Sx=function(e,i){return e===void 0&&(e=[]),i===void 0&&(i=[]),e.length!==i.length||e.some(function(n,r){return!Object.is(n,i[r])})},Nc={error:null},wx=function(t){pi(e,t);function e(){for(var n,r=arguments.length,o=new Array(r),s=0;s<r;s++)o[s]=arguments[s];return n=t.call.apply(t,[this].concat(o))||this,n.state=Nc,n.resetErrorBoundary=function(){for(var a,f=arguments.length,R=new Array(f),_=0;_<f;_++)R[_]=arguments[_];n.props.onReset==null||(a=n.props).onReset.apply(a,R),n.reset()},n}e.getDerivedStateFromError=function(r){return{error:r}};var i=e.prototype;return i.reset=function(){this.setState(Nc)},i.componentDidCatch=function(r,o){var s,a;(s=(a=this.props).onError)==null||s.call(a,r,o)},i.componentDidUpdate=function(r,o){var s=this.state.error,a=this.props.resetKeys;if(s!==null&&o.error!==null&&Sx(r.resetKeys,a)){var f,R;(f=(R=this.props).onResetKeysChange)==null||f.call(R,r.resetKeys,a),this.reset()}},i.render=function(){var r=this.state.error,o=this.props,s=o.fallbackRender,a=o.FallbackComponent,f=o.fallback;if(r!==null){var R={error:r,resetErrorBoundary:this.resetErrorBoundary};if(dt.exports.isValidElement(f))return f;if(typeof s=="function")return s(R);if(a)return dt.exports.createElement(a,R);throw new Error("react-error-boundary requires either a fallback, fallbackRender, or FallbackComponent prop")}return this.props.children},e}(dt.exports.Component);const kx=({renderErrorFallback:t,suspenseFallback:e,children:i})=>{const{reset:n}=gf();return mt(wx,{onReset:n,fallbackRender:t,children:mt(dt.exports.Suspense,{fallback:e,children:i})})},Cx=bt.a`
   justify-self: center;
 `,Ex=bt.p`
   display: grid;
