@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React from 'react';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
 import { TopAppBar } from '.';
 
@@ -7,15 +6,15 @@ export default {
   component: TopAppBar,
 } as ComponentMeta<typeof TopAppBar>;
 
-const Template: ComponentStory<typeof TopAppBar> = (args) => <TopAppBar {...args} />;
-
-export const TitleOnly = Template.bind({});
-TitleOnly.args = {
-  title: '都道府県別総人口推移グラフ',
-  onBack: undefined,
+export const TitleOnly: ComponentStoryObj<typeof TopAppBar> = {
+  args: {
+    title: '都道府県別総人口推移グラフ',
+    onBack: undefined,
+  },
 };
 
-export const WithBackAction = Template.bind({});
-WithBackAction.args = {
-  title: '都道府県別総人口推移グラフ',
+export const WithBackAction: ComponentStoryObj<typeof TopAppBar> = {
+  args: {
+    title: '都道府県別総人口推移グラフ',
+  },
 };

@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React from 'react';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
 import { Headline } from '.';
 
@@ -7,4 +6,8 @@ export default {
   component: Headline,
 } as ComponentMeta<typeof Headline>;
 
-export const Default: ComponentStory<typeof Headline> = () => <Headline>総人口推移グラフ</Headline>;
+export const Default: ComponentStoryObj<typeof Headline> = {
+  args: {
+    children: '総人口推移グラフ',
+  },
+};

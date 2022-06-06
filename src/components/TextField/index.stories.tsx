@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React from 'react';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
 import { TextField } from '.';
 
@@ -7,6 +6,9 @@ export default {
   component: TextField,
 } as ComponentMeta<typeof TextField>;
 
-export const Default: ComponentStory<typeof TextField> = () => (
-  <TextField type="password" placeholder="RESAS-APIキー" />
-);
+export const Default: ComponentStoryObj<typeof TextField> = {
+  args: {
+    type: 'password',
+    placeholder: 'RESAS-APIキー',
+  },
+};
