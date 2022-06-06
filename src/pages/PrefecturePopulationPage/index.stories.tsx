@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 import { usePrefecturePopulations } from 'src/pages/PrefecturePopulationPage/usePrefecturePopulations';
 import { usePrefectureSelections } from 'src/pages/PrefecturePopulationPage/usePrefectureSelections';
@@ -36,28 +36,36 @@ export default {
   component: Target,
 } as ComponentMeta<typeof Target>;
 
-export const Default: ComponentStory<typeof Target> = () => <Target isLoadingPrefecturePopulations={undefined} />;
+export const Default: ComponentStoryObj<typeof Target> = {};
 
-export const OnLoadingPopulations: ComponentStory<typeof Target> = () => <Target isLoadingPrefecturePopulations />;
+export const OnLoadingPopulations: ComponentStoryObj<typeof Target> = {
+  args: {
+    isLoadingPrefecturePopulations: true,
+  },
+};
 
 const ThrowPromiseComponent = () => {
   // eslint-disable-next-line @typescript-eslint/no-throw-literal
   throw new Promise(() => {});
 };
 
-export const OnLoadingPrefecture: ComponentStory<typeof Page> = () => (
-  <PageLayout onClickBackButton={() => {}}>
-    <ThrowPromiseComponent />
-  </PageLayout>
-);
+export const OnLoadingPrefecture: ComponentStoryObj<typeof PageLayout> = {
+  render: () => (
+    <PageLayout onClickBackButton={() => {}}>
+      <ThrowPromiseComponent />
+    </PageLayout>
+  ),
+};
 
 const ThrowErrorComponent = () => {
   // eslint-disable-next-line @typescript-eslint/no-throw-literal
   throw new Error();
 };
 
-export const OnError: ComponentStory<typeof Page> = () => (
-  <PageLayout onClickBackButton={() => {}}>
-    <ThrowErrorComponent />
-  </PageLayout>
-);
+export const OnError: ComponentStoryObj<typeof Page> = {
+  render: () => (
+    <PageLayout onClickBackButton={() => {}}>
+      <ThrowErrorComponent />
+    </PageLayout>
+  ),
+};

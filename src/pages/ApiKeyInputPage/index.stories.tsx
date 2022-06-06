@@ -1,5 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React, { FormEvent, useState } from 'react';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Presentation as PageLayout } from './PageLayout';
 
@@ -9,14 +9,10 @@ export default {
   component: Page,
 } as ComponentMeta<typeof Page>;
 
-export const Default: ComponentStory<typeof Page> = () => {
-  const [resasApiKeyInput, setResasApiKeyInput] = useState('');
-  const handleFormSubmit = (event: FormEvent) => {
-    event.preventDefault();
-  };
-  return (
+export const Default: ComponentStoryObj<typeof Page> = {
+  render: (args) => (
     <PageLayout>
-      <Page resasApiKeyInput={resasApiKeyInput} setResasApiKeyInput={setResasApiKeyInput} onSubmit={handleFormSubmit} />
+      <Page {...args} />
     </PageLayout>
-  );
+  ),
 };
