@@ -1,8 +1,8 @@
 import { AppThemeProvider } from 'src/themes/AppThemeProvider';
-import { ResasClient } from '../src/api/resas/ResasClient';
+import { ResasClient } from 'src/api/resas/ResasClient';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { ResasClientContext } from '../src/api/resas/ResasClientProvider';
-import { startMockWorker } from '../src/mocks/browser';
+import { ResasClientProvider } from 'src/api/resas/ResasClientProvider';
+import { startMockWorker } from 'src/mocks/browser';
 
 startMockWorker();
 
@@ -33,9 +33,9 @@ export const decorators = [
   (Story) => (
     <AppThemeProvider>
       <QueryClientProvider client={queryClient}>
-        <ResasClientContext.Provider value={resasClient}>
+        <ResasClientProvider client={resasClient}>
           <Story />
-        </ResasClientContext.Provider>
+        </ResasClientProvider>
       </QueryClientProvider>
     </AppThemeProvider>
   ),

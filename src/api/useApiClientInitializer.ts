@@ -1,25 +1,25 @@
 import { useCallback, useMemo } from 'react';
 import { useQueryClient } from 'react-query';
-import { useResasClientInitializer } from 'src/api/resas/useResasClientInitializer';
+import { useResasClient } from 'src/api/resas/useResasClient';
 
 export const useApiClientInitializer = () => {
   const queryClient = useQueryClient();
-  const resasClientInitializer = useResasClientInitializer();
+  const resasClient = useResasClient();
 
-  const { isInitialized } = resasClientInitializer;
+  const isInitialized = resasClient.isInitialized();
 
   const initialize = useCallback(
     (resasApiKey: string) => {
       queryClient.clear();
-      resasClientInitializer.initialize(resasApiKey);
+      resasClient.setApiKey(resasApiKey);
     },
-    [queryClient, resasClientInitializer],
+    [queryClient, resasClient],
   );
 
   const reset = useCallback(() => {
     queryClient.clear();
-    resasClientInitializer.reset();
-  }, [queryClient, resasClientInitializer]);
+    resasClient.clearApiKey();
+  }, [queryClient, resasClient]);
 
   return useMemo(() => ({ isInitialized, initialize, reset }), [isInitialized, initialize, reset]);
 };
