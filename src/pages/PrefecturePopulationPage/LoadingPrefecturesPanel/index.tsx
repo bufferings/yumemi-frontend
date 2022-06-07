@@ -22,7 +22,7 @@ const LoadingLabel = styled.div(
   `,
 );
 
-export const SuspenseFallback = () => {
+export const LoadingPrefecturesPanel = () => {
   const theme = useTheme();
   return (
     <LoaderWrapper>

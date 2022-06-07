@@ -8,7 +8,6 @@ import { TopAppBar } from 'src/components/TopAppBar';
 import { route } from 'src/pages/routes';
 
 import { ErrorFallback } from './ErrorFallback';
-import { SuspenseFallback } from './SuspenseFallback';
 
 const renderErrorFallback = ({ resetErrorBoundary }: FallbackProps) => <ErrorFallback onReset={resetErrorBoundary} />;
 
@@ -26,9 +25,7 @@ type PresentationProps = {
 export const Presentation = ({ children, onClickBackButton }: PresentationProps) => (
   <Wrapper>
     <TopAppBar title="都道府県別総人口推移グラフ" onBack={onClickBackButton} />
-    <ApiClientBoundary renderErrorFallback={renderErrorFallback} suspenseFallback={<SuspenseFallback />}>
-      {children}
-    </ApiClientBoundary>
+    <ApiClientBoundary renderErrorFallback={renderErrorFallback}>{children}</ApiClientBoundary>
   </Wrapper>
 );
 

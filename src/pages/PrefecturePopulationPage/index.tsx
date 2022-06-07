@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React from 'react';
 import { Headline } from 'src/components/Headline';
+import { LoadingPrefecturesPanel } from 'src/pages/PrefecturePopulationPage/LoadingPrefecturesPanel';
 import { PrefecturePopulation, PrefectureSelection } from 'src/types';
 
 import { PageLayout } from './PageLayout';
@@ -24,42 +25,55 @@ const Wrapper = styled.div`
   }
 `;
 
-type PresentationProps = {
-  prefectureSelections: PrefectureSelection[];
-  onTogglePrefectureSelection: (prefCode: number) => void;
-  isLoadingPrefecturePopulations: boolean;
-  prefecturePopulations: PrefecturePopulation[];
-};
-
 const DataSource = styled.p(
   ({ theme }) => css`
     ${theme.fonts.bodyS}
   `,
 );
 
+type PresentationProps = {
+  isLoadingPrefectures: boolean;
+  prefectureSelections: PrefectureSelection[];
+  onTogglePrefectureSelection: (prefCode: number) => void;
+  isLoadingPopulations: boolean;
+  prefecturePopulations: PrefecturePopulation[];
+};
+
 export const Presentation = ({
+  isLoadingPrefectures,
   prefectureSelections,
   onTogglePrefectureSelection,
-  isLoadingPrefecturePopulations,
+  isLoadingPopulations,
   prefecturePopulations,
-}: PresentationProps) => (
-  <Wrapper>
-    <Headline>都道府県</Headline>
-    <PrefectureSelector prefectureSelections={prefectureSelections} onToggleSelection={onTogglePrefectureSelection} />
-    <Headline>総人口推移グラフ</Headline>
-    <PopulationGraph isLoading={isLoadingPrefecturePopulations} prefecturePopulations={prefecturePopulations} />
-    <DataSource>出典：RESAS（地域経済分析システム）</DataSource>
-  </Wrapper>
-);
+}: PresentationProps) => {
+  if (isLoadingPrefectures) {
+    return <LoadingPrefecturesPanel />;
+  }
+  return (
+    <Wrapper>
+      <Headline>都道府県</Headline>
+      <PrefectureSelector prefectureSelections={prefectureSelections} onToggleSelection={onTogglePrefectureSelection} />
+      <Headline>総人口推移グラフ</Headline>
+      <PopulationGraph isLoading={isLoadingPopulations} prefecturePopulations={prefecturePopulations} />
+      <DataSource>出典：RESAS（地域経済分析システム）</DataSource>
+    </Wrapper>
+  );
+};
 
 const InBoundary = () => {
-  const { prefectureSelections, togglePrefectureSelection } = usePrefectureSelections();
-  const { isLoading, prefecturePopulations } = usePrefecturePopulations(prefectureSelections);
+  const {
+    isLoading: isLoadingPrefectures,
+    prefectureSelections,
+    togglePrefectureSelection,
+  } = usePrefectureSelections();
+  const { isLoading: isLoadingPopulations, prefecturePopulations } = usePrefecturePopulations(prefectureSelections);
+
   return (
     <Presentation
+      isLoadingPrefectures={isLoadingPrefectures}
       prefectureSelections={prefectureSelections}
       onTogglePrefectureSelection={togglePrefectureSelection}
-      isLoadingPrefecturePopulations={isLoading}
+      isLoadingPopulations={isLoadingPopulations}
       prefecturePopulations={prefecturePopulations}
     />
   );

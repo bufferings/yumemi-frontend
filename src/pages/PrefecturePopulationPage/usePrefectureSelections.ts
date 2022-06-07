@@ -1,14 +1,18 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { usePrefecturesQuery } from 'src/api/usePrefecturesQuery';
 import { PrefectureSelection } from 'src/types';
 
 export const usePrefectureSelections = () => {
-  const prefectures = usePrefecturesQuery();
+  const { isLoading, data: prefectures } = usePrefecturesQuery();
   const [prefectureSelections, setPrefectureSelections] = useState<PrefectureSelection[]>([]);
 
   useEffect(() => {
-    const selections = prefectures.map((prefecture) => ({ ...prefecture, selected: false }));
-    setPrefectureSelections(selections);
+    if (prefectures) {
+      const selections = prefectures.map((prefecture) => ({ ...prefecture, selected: false }));
+      setPrefectureSelections(selections);
+    } else {
+      setPrefectureSelections([]);
+    }
   }, [prefectures]);
 
   const togglePrefectureSelection = useCallback(
@@ -25,8 +29,5 @@ export const usePrefectureSelections = () => {
     [setPrefectureSelections],
   );
 
-  return useMemo(
-    () => ({ prefectureSelections, togglePrefectureSelection }),
-    [prefectureSelections, togglePrefectureSelection],
-  );
+  return { isLoading, prefectureSelections, togglePrefectureSelection };
 };
