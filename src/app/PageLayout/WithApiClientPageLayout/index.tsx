@@ -4,10 +4,9 @@ import { FallbackProps } from 'react-error-boundary';
 import { useNavigate } from 'react-router-dom';
 import { ApiClientBoundary } from 'src/api/ApiClientBoundary';
 import { useApiClientInitializer } from 'src/api/useApiClientInitializer';
+import { ErrorFallback } from 'src/app/PageLayout/WithApiClientPageLayout/ErrorFallback';
+import { route } from 'src/app/routes';
 import { TopAppBar } from 'src/components/TopAppBar';
-import { route } from 'src/pages/routes';
-
-import { ErrorFallback } from './ErrorFallback';
 
 const renderErrorFallback = ({ resetErrorBoundary }: FallbackProps) => <ErrorFallback onReset={resetErrorBoundary} />;
 
@@ -33,14 +32,14 @@ type Props = {
   children: ReactNode;
 };
 
-export const PageLayout = ({ children }: Props) => {
-  const apiClientInitializer = useApiClientInitializer();
+export const WithApiClientPageLayout = ({ children }: Props) => {
+  const { reset } = useApiClientInitializer();
   const navigate = useNavigate();
 
   const handleResetApiKey = useCallback(() => {
-    apiClientInitializer.reset();
+    reset();
     navigate(route.apiKeyInputPage);
-  }, [apiClientInitializer, navigate]);
+  }, [reset, navigate]);
 
   return <Presentation onClickBackButton={handleResetApiKey}>{children}</Presentation>;
 };

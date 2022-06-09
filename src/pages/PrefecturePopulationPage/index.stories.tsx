@@ -1,11 +1,11 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
+import { ApiClientProvider } from 'src/api/ApiClientProvider';
+import { Presentation as PageLayout } from 'src/app/PageLayout/WithApiClientPageLayout';
 import { usePrefecturePopulations } from 'src/pages/PrefecturePopulationPage/usePrefecturePopulations';
 import { usePrefectureSelections } from 'src/pages/PrefecturePopulationPage/usePrefectureSelections';
 
-import { Presentation as PageLayout } from './PageLayout';
-
-import { Presentation as Page } from '.';
+import { Presentation } from '.';
 
 type Props = {
   isLoadingPrefecturesParam: boolean | undefined;
@@ -24,15 +24,13 @@ const Target = ({ isLoadingPrefecturesParam, isLoadingPopulationsParam }: Props)
   const { isLoading: isLoadingPopulations, prefecturePopulations } = usePrefecturePopulations(prefectureSelections);
 
   return (
-    <PageLayout onClickBackButton={() => {}}>
-      <Page
-        isLoadingPrefectures={isLoadingPrefecturesParam ?? isLoadingPrefectures}
-        prefectureSelections={prefectureSelections}
-        onTogglePrefectureSelection={togglePrefectureSelection}
-        isLoadingPopulations={isLoadingPopulationsParam ?? isLoadingPopulations}
-        prefecturePopulations={prefecturePopulations}
-      />
-    </PageLayout>
+    <Presentation
+      isLoadingPrefectures={isLoadingPrefecturesParam ?? isLoadingPrefectures}
+      prefectureSelections={prefectureSelections}
+      onTogglePrefectureSelection={togglePrefectureSelection}
+      isLoadingPopulations={isLoadingPopulationsParam ?? isLoadingPopulations}
+      prefecturePopulations={prefecturePopulations}
+    />
   );
 };
 
@@ -40,15 +38,27 @@ export default {
   component: Target,
 } as ComponentMeta<typeof Target>;
 
-export const Default: ComponentStoryObj<typeof Target> = {};
+export const Default: ComponentStoryObj<typeof Target> = {
+  decorators: [
+    (Story) => (
+      <ApiClientProvider initialResasApiKey="dev">
+        <PageLayout onClickBackButton={() => {}}>
+          <Story />
+        </PageLayout>
+      </ApiClientProvider>
+    ),
+  ],
+};
 
 export const OnLoadingPrefectures: ComponentStoryObj<typeof Target> = {
+  ...Default,
   args: {
     isLoadingPrefecturesParam: true,
   },
 };
 
 export const OnLoadingPopulations: ComponentStoryObj<typeof Target> = {
+  ...Default,
   args: {
     isLoadingPopulationsParam: true,
   },
@@ -59,10 +69,7 @@ const ThrowErrorComponent = () => {
   throw new Error();
 };
 
-export const OnError: ComponentStoryObj<typeof Page> = {
-  render: () => (
-    <PageLayout onClickBackButton={() => {}}>
-      <ThrowErrorComponent />
-    </PageLayout>
-  ),
+export const OnError: ComponentStoryObj<typeof Target> = {
+  ...Default,
+  render: () => <ThrowErrorComponent />,
 };

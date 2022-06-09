@@ -25,4 +25,4 @@ type Props = {
   children: ReactNode;
 };
 
-export const PageLayout = ({ children }: Props) => <Presentation>{children}</Presentation>;
+export const WithoutApiClientPageLayout = ({ children }: Props) => <Presentation>{children}</Presentation>;

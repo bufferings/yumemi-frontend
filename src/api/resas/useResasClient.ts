@@ -1,10 +1,11 @@
-import { useContext } from 'react';
-import { ResasClientContext } from 'src/api/resas/ResasClientProvider';
+import { useContext, useMemo } from 'react';
+import { ResasApiKeyContext } from 'src/api/resas/ResasApiKeyProvider';
+import { ResasClient } from 'src/api/resas/ResasClient';
 
 export const useResasClient = () => {
-  const resasClient = useContext(ResasClientContext);
-  if (!resasClient) {
-    throw new Error('No ResasClient set, use ResasClientProvider to set one');
+  const resasApiKey = useContext(ResasApiKeyContext);
+  if (!resasApiKey) {
+    throw new Error('No ResasApiKey set, useApiClientInitializer to set one');
   }
-  return resasClient;
+  return useMemo(() => new ResasClient(resasApiKey), [resasApiKey]);
 };

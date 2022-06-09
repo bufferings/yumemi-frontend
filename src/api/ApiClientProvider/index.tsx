@@ -1,9 +1,7 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { ResasClient } from 'src/api/resas/ResasClient';
-
-import { ResasClientProvider } from '../resas/ResasClientProvider';
+import { ResasClientProvider } from 'src/api/resas/ResasApiKeyProvider';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -12,19 +10,23 @@ const queryClient = new QueryClient({
       refetchOnWindowFocus: false,
       cacheTime: Infinity,
       staleTime: Infinity,
+      useErrorBoundary: true,
     },
   },
 });
 
-const resasClient = new ResasClient();
-
 type Props = {
-  children: ReactNode;
+  children: React.ReactNode;
+  initialResasApiKey?: string;
 };
 
-export const ApiClientProvider = ({ children }: Props) => (
+export const ApiClientProvider = ({ children, initialResasApiKey }: Props) => (
   <QueryClientProvider client={queryClient}>
-    <ResasClientProvider client={resasClient}>{children}</ResasClientProvider>
+    <ResasClientProvider initialResasApiKey={initialResasApiKey}>{children}</ResasClientProvider>
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );
+
+ApiClientProvider.defaultProps = {
+  initialResasApiKey: undefined,
+};

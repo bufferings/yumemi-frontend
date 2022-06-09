@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useApiClientInitializer } from 'src/api/useApiClientInitializer';
-import { route } from 'src/pages/routes';
+import { route } from 'src/app/routes';
 
 type Props = {
   children: ReactElement;

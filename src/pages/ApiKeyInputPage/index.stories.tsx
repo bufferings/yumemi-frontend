@@ -1,18 +1,21 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
-import React from 'react';
+import { ApiClientProvider } from 'src/api/ApiClientProvider';
+import { PageLayout } from 'src/app/PageLayout';
 
-import { Presentation as PageLayout } from './PageLayout';
-
-import { Presentation as Page } from '.';
+import { Presentation } from '.';
 
 export default {
-  component: Page,
-} as ComponentMeta<typeof Page>;
+  component: Presentation,
+} as ComponentMeta<typeof Presentation>;
 
-export const Default: ComponentStoryObj<typeof Page> = {
-  render: (args) => (
-    <PageLayout>
-      <Page {...args} />
-    </PageLayout>
-  ),
+export const Default: ComponentStoryObj<typeof Presentation> = {
+  decorators: [
+    (Story) => (
+      <ApiClientProvider>
+        <PageLayout>
+          <Story />
+        </PageLayout>
+      </ApiClientProvider>
+    ),
+  ],
 };

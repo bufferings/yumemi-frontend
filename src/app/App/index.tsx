@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ApiClientProvider } from 'src/api/ApiClientProvider';
+import { RequireApiClient } from 'src/app/App/RequireApiClient';
+import { PageLayout } from 'src/app/PageLayout';
+import { route } from 'src/app/routes';
 import { ApiKeyInputPage } from 'src/pages/ApiKeyInputPage';
 import { PrefecturePopulationPage } from 'src/pages/PrefecturePopulationPage';
-import { route } from 'src/pages/routes';
 import { AppThemeProvider } from 'src/themes/AppThemeProvider';
-
-import { RequireApiClient } from './RequireApiClient';
 
 const AppRoutes = () => (
   <Routes>
@@ -14,11 +14,20 @@ const AppRoutes = () => (
       path={route.mainPage}
       element={
         <RequireApiClient>
-          <PrefecturePopulationPage />
+          <PageLayout>
+            <PrefecturePopulationPage />
+          </PageLayout>
         </RequireApiClient>
       }
     />
-    <Route path={route.apiKeyInputPage} element={<ApiKeyInputPage />} />
+    <Route
+      path={route.apiKeyInputPage}
+      element={
+        <PageLayout>
+          <ApiKeyInputPage />
+        </PageLayout>
+      }
+    />
   </Routes>
 );
 

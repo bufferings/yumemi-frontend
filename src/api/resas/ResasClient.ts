@@ -13,22 +13,10 @@ type PopulationApiResponse = {
 };
 
 export class ResasClient {
-  private apiKey: string | undefined;
+  private readonly apiKey: string | undefined;
 
   constructor(apiKey?: string) {
     this.apiKey = apiKey;
-  }
-
-  public isInitialized() {
-    return !!this.apiKey;
-  }
-
-  public setApiKey(apiKey: string) {
-    this.apiKey = apiKey;
-  }
-
-  public clearApiKey() {
-    this.apiKey = undefined;
   }
 
   public async fetchPrefectures() {

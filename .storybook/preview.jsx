@@ -1,8 +1,6 @@
 import { AppThemeProvider } from 'src/themes/AppThemeProvider';
-import { ResasClient } from 'src/api/resas/ResasClient';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ResasClientProvider } from 'src/api/resas/ResasClientProvider';
 import { startMockWorker } from 'src/mocks/browser';
+import { BrowserRouter } from 'react-router-dom';
 
 startMockWorker();
 
@@ -16,27 +14,12 @@ export const parameters = {
   },
 };
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-      refetchOnWindowFocus: false,
-      cacheTime: Infinity,
-      staleTime: Infinity,
-    },
-  },
-});
-
-const resasClient = new ResasClient('dev');
-
 export const decorators = [
   (Story) => (
-    <AppThemeProvider>
-      <QueryClientProvider client={queryClient}>
-        <ResasClientProvider client={resasClient}>
-          <Story />
-        </ResasClientProvider>
-      </QueryClientProvider>
-    </AppThemeProvider>
+    <BrowserRouter>
+      <AppThemeProvider>
+        <Story />
+      </AppThemeProvider>
+    </BrowserRouter>
   ),
 ];

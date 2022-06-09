@@ -9,11 +9,6 @@ import { useSpinDelay } from 'spin-delay';
 import { useHighCharts } from 'src/pages/PrefecturePopulationPage/PopulationGraph/useHighCharts';
 import { PrefecturePopulation } from 'src/types';
 
-type Props = {
-  isLoading: boolean;
-  prefecturePopulations: PrefecturePopulation[];
-};
-
 const LoaderWrapper = styled.div`
   display: grid;
   justify-items: center;
@@ -47,6 +42,11 @@ const MyLoadingOverlay = styled(LoadingOverlay)(
     }
   `,
 );
+
+type Props = {
+  isLoading: boolean;
+  prefecturePopulations: PrefecturePopulation[];
+};
 
 export const PopulationGraph = ({ isLoading, prefecturePopulations }: Props) => {
   const showSpinner = useSpinDelay(isLoading);

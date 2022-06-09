@@ -4,12 +4,10 @@ import React, { FormEventHandler, useCallback, useState } from 'react';
 import { MdArrowForward } from 'react-icons/all';
 import { useNavigate } from 'react-router-dom';
 import { useApiClientInitializer } from 'src/api/useApiClientInitializer';
+import { route } from 'src/app/routes';
 import { Button } from 'src/components/Button';
 import { Headline } from 'src/components/Headline';
 import { TextField } from 'src/components/TextField';
-import { route } from 'src/pages/routes';
-
-import { PageLayout } from './PageLayout';
 
 const Wrapper = styled.div`
   form {
@@ -95,20 +93,16 @@ export const Presentation = ({ onApiKeySubmit }: PresentationProps) => {
 };
 
 export const ApiKeyInputPage = () => {
-  const apiClientInitializer = useApiClientInitializer();
+  const { initialize } = useApiClientInitializer();
   const navigate = useNavigate();
 
   const handleApiKeySubmit = useCallback(
     (newResasApiKey: string) => {
-      apiClientInitializer.initialize(newResasApiKey);
+      initialize(newResasApiKey);
       navigate(route.mainPage);
     },
-    [apiClientInitializer, navigate],
+    [initialize, navigate],
   );
 
-  return (
-    <PageLayout>
-      <Presentation onApiKeySubmit={handleApiKeySubmit} />
-    </PageLayout>
-  );
+  return <Presentation onApiKeySubmit={handleApiKeySubmit} />;
 };

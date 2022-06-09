@@ -3,12 +3,11 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { Headline } from 'src/components/Headline';
 import { LoadingPrefecturesPanel } from 'src/pages/PrefecturePopulationPage/LoadingPrefecturesPanel';
+import { usePrefecturePopulations } from 'src/pages/PrefecturePopulationPage/usePrefecturePopulations';
 import { PrefecturePopulation, PrefectureSelection } from 'src/types';
 
-import { PageLayout } from './PageLayout';
 import { PopulationGraph } from './PopulationGraph';
 import { PrefectureSelector } from './PrefectureSelector';
-import { usePrefecturePopulations } from './usePrefecturePopulations';
 import { usePrefectureSelections } from './usePrefectureSelections';
 
 const Wrapper = styled.div`
@@ -60,7 +59,7 @@ export const Presentation = ({
   );
 };
 
-const InBoundary = () => {
+export const PrefecturePopulationPage = () => {
   const {
     isLoading: isLoadingPrefectures,
     prefectureSelections,
@@ -78,9 +77,3 @@ const InBoundary = () => {
     />
   );
 };
-
-export const PrefecturePopulationPage = () => (
-  <PageLayout>
-    <InBoundary />
-  </PageLayout>
-);
