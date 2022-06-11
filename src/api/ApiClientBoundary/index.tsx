@@ -3,11 +3,11 @@ import { ErrorBoundary, ErrorBoundaryPropsWithRender } from 'react-error-boundar
 import { useQueryErrorResetBoundary } from 'react-query';
 
 type Props = {
-  renderErrorFallback: ErrorBoundaryPropsWithRender['fallbackRender'];
   children: ReactNode;
+  renderErrorFallback: ErrorBoundaryPropsWithRender['fallbackRender'];
 };
 
-export const ApiClientBoundary = ({ renderErrorFallback, children }: Props) => {
+export const ApiClientBoundary = ({ children, renderErrorFallback }: Props) => {
   const { reset } = useQueryErrorResetBoundary();
   return (
     <ErrorBoundary onReset={reset} fallbackRender={renderErrorFallback}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { ResasClientProvider } from 'src/api/resas/ResasApiKeyProvider';
+import { ResasApiKeyProvider } from 'src/api/resas/ResasApiKeyProvider';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,7 +22,7 @@ type Props = {
 
 export const ApiClientProvider = ({ children, initialResasApiKey }: Props) => (
   <QueryClientProvider client={queryClient}>
-    <ResasClientProvider initialResasApiKey={initialResasApiKey}>{children}</ResasClientProvider>
+    <ResasApiKeyProvider initialResasApiKey={initialResasApiKey}>{children}</ResasApiKeyProvider>
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );

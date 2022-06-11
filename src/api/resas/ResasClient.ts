@@ -13,9 +13,9 @@ type PopulationApiResponse = {
 };
 
 export class ResasClient {
-  private readonly apiKey: string | undefined;
+  private readonly apiKey: string;
 
-  constructor(apiKey?: string) {
+  constructor(apiKey: string) {
     this.apiKey = apiKey;
   }
 
@@ -45,9 +45,6 @@ export class ResasClient {
   }
 
   private option() {
-    if (!this.apiKey) {
-      throw new Error('RESAS API key is not set.');
-    }
     return {
       headers: {
         'x-api-key': this.apiKey,

@@ -9,7 +9,7 @@ type Props = {
   initialResasApiKey?: string;
 };
 
-export const ResasClientProvider = ({ children, initialResasApiKey }: Props) => {
+export const ResasApiKeyProvider = ({ children, initialResasApiKey }: Props) => {
   const [apiKey, setApiKey] = useState(initialResasApiKey);
   return (
     <SetResasApiKeyContext.Provider value={setApiKey}>
@@ -18,6 +18,6 @@ export const ResasClientProvider = ({ children, initialResasApiKey }: Props) => 
   );
 };
 
-ResasClientProvider.defaultProps = {
+ResasApiKeyProvider.defaultProps = {
   initialResasApiKey: undefined,
 };
