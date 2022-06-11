@@ -2,7 +2,7 @@ import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import LoadingOverlay from 'react-loading-overlay-ts';
 import { BarLoader } from 'react-spinners';
 import { useSpinDelay } from 'spin-delay';
