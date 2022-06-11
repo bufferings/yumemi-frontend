@@ -1,6 +1,6 @@
-import { AppThemeProvider } from 'src/themes/AppThemeProvider';
+import { AppThemeProvider } from 'src/app/themes/AppThemeProvider';
 import { startMockWorker } from 'src/mocks/browser';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 startMockWorker();
 
@@ -16,10 +16,10 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <BrowserRouter>
+    <MemoryRouter>
       <AppThemeProvider>
         <Story />
       </AppThemeProvider>
-    </BrowserRouter>
+    </MemoryRouter>
   ),
 ];
